@@ -1,0 +1,21 @@
+:root {
+    /*Colors*/
+    --foreground: #110729;
+    --color-grey-easy: #f2f2f2;
+    --background: var(--color-grey-easy);
+    --color-white: #fff;
+    --color-orange: #ffad4f;
+
+
+    /*Text*/
+    --text-xs: 0.9231rem;
+    --text-s: 1rem;
+    --text-m: 1.08rem;
+    --text-l: 1.2308rem;
+
+    /*Radius*/
+    --radius-s: 2px;
+    --radius-m: 4px;
+    --radius-l: 8px;
+    --radius-xl: 12px;
+}
