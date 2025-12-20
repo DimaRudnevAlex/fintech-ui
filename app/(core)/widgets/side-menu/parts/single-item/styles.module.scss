@@ -2,48 +2,32 @@
   display: flex;
   align-items: center;
   transition: 0.2s;
-  color: var(--color-grey-medium);
+  color: var(--colors--neutral--200);
 
   &:hover {
-    background-color: var(--color-primary-darkest);
+    background-color: var(--colors--neutral--500);
     color: var(--color-white);
   }
 }
 
 .icon {
   flex: none;
-  width: var(--size-68);
-  height: var(--size-68);
+  width: 68px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 
+
   svg {
-    fill: var(--color-grey-light);
-    height: var(--size-20);
+    height: 20px;
   }
 }
 
 .text {
   font-weight: 500;
   line-height: 18px;
-  margin-left: -10px;
   white-space: nowrap;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition:
-    opacity 1s,
-    font-size 0.1s ease-out,
-    transform 0.5s;
 }
 
-:global(.extended) {
-  .text {
-    visibility: visible;
-    opacity: 1;
-    font-size: 13px;
-    transform: translateX(0);
-  }
-}

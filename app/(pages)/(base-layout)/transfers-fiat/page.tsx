@@ -1,5 +1,5 @@
 const Page: React.FC = () => {
-  return <div>Transfers</div>;
+  return <div>Transfers Fiat</div>;
 };
 
 export default Page;

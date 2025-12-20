@@ -3,38 +3,68 @@
 import { useState } from 'react';
 
 import { clsx } from 'clsx';
+import { motion, Variants } from 'framer-motion';
 import { HandCoins, User, WalletCards } from 'lucide-react';
 
 import { ROUTES } from '@/(shared)/constants/routes';
 
 import AsideNestedItem from './parts/nested-item';
+import AsideSingleItem from './parts/single-item';
 import SublistItem from './parts/sublist-item';
 import AsideTop from './parts/top';
 
 import styles from './styles.module.scss';
 
+const asideVariants: Variants = {
+  collapsed: {
+    width: 68,
+  },
+  expanded: {
+    width: 285,
+  },
+};
+
 const SideMenu: React.FC = () => {
   const [extended, setExtended] = useState<boolean>(false);
   return (
-    <aside
+    <motion.aside
       onMouseEnter={() => setExtended(true)}
       onMouseLeave={() => setExtended(false)}
+      variants={asideVariants}
+      animate={extended ? 'expanded' : 'collapsed'}
+      transition={{
+        type: 'spring',
+        stiffness: 260,
+        damping: 28,
+      }}
       className={clsx(styles.aside, extended && 'extended')}
     >
-      <AsideTop />
+      <AsideTop extended={extended} />
 
       <ul className={styles.menu}>
-        <AsideNestedItem label={'Profile'} Icon={<User />}>
-          <SublistItem label={'Me'} href={ROUTES.PROFILE} />
+        <AsideSingleItem
+          label="Profile"
+          href={ROUTES.PROFILE}
+          Icon={<User />}
+          extended={extended}
+        />
+        <AsideNestedItem
+          label={'Transfers'}
+          Icon={<HandCoins />}
+          extended={extended}
+        >
+          <SublistItem label={'Transfer fiat'} href={ROUTES.TRANSFERS_FIAT} />
+          <SublistItem label={'Transfer Crypt'} href={ROUTES.TRANSFERS_CRYPT} />
         </AsideNestedItem>
-        <AsideNestedItem label={'Transfers'} Icon={<HandCoins />}>
-          <SublistItem label={'Transfer fiat'} href={ROUTES.TRANSFERS} />
-        </AsideNestedItem>
-        <AsideNestedItem label={'Accounts'} Icon={<WalletCards />}>
+        <AsideNestedItem
+          label={'Accounts'}
+          Icon={<WalletCards />}
+          extended={extended}
+        >
           <SublistItem label={'Accounts fiat'} href={ROUTES.ACCOUNTS} />
         </AsideNestedItem>
       </ul>
-    </aside>
+    </motion.aside>
   );
 };
 

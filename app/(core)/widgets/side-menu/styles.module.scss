@@ -5,13 +5,8 @@
   background-color: var(--colors--neutral--600);
   height: 100vh;
   font-weight: 500;
-  transition: width 0.25s;
   width: 68px;
   z-index: 1000;
-
-  &:global(.extended) {
-    width: 285px;
-  }
 
   .menu {
     margin-top: 20px;
