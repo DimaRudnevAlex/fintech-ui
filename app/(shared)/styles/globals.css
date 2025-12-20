@@ -9,7 +9,7 @@ body {
     color: var(--colors--neutral--100);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-width: 1280px;
+    /*min-width: 1280px;*/
     min-height: 100vh;
     max-width: 100vw;
     overflow-x: hidden;
