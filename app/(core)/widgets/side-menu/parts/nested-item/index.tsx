@@ -1,4 +1,4 @@
-import { Children, useState } from 'react';
+import { Children, ReactElement, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
@@ -29,9 +29,10 @@ const AsideNestedItem: React.FC<AsideNestedItemProps> = ({
 }) => {
   const pathname = usePathname();
 
-  const hasActiveChild = Children.toArray(children).some(
-    (child: any) => child.props?.href === pathname,
-  );
+  const hasActiveChild = Children.toArray(children).some((child) => {
+    const element = child as ReactElement<{ href?: string }>;
+    return element.props?.href === pathname;
+  });
 
   const [open, setOpen] = useState<boolean>(hasActiveChild);
 
