@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import Logo from '@/(shared)/components/logo';
 import Heading from '@/(shared)/components/typography/heading';
@@ -12,19 +12,21 @@ import styles from './styles.module.scss';
 const AsideTop: React.FC<AsideTopProps> = ({ extended }) => (
   <Link className={styles.top} href="/">
     <Logo className={styles.icon} />
-    <AnimatePresence initial={false}>
-      {extended && (
-        <motion.div
-          initial={{ opacity: 0, x: -6 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -6 }}
-          transition={{ duration: 0.2, ease: 'easeOut' }}
-          className={styles.title}
-        >
-          <Heading variant="h1">Fintech</Heading>
-        </motion.div>
-      )}
-    </AnimatePresence>
+
+    <motion.div
+      className={styles.title}
+      initial={false}
+      animate={{
+        opacity: extended ? 1 : 0,
+        x: extended ? 0 : -6,
+      }}
+      transition={{
+        duration: extended ? 0.15 : 0.05,
+        ease: 'easeOut',
+      }}
+    >
+      <Heading variant="h1">Fintech</Heading>
+    </motion.div>
   </Link>
 );
 

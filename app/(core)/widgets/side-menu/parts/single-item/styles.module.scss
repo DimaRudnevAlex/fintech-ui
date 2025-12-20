@@ -1,11 +1,15 @@
+.root {
+  position: relative;
+}
+
 .item {
+  position: relative;
   display: flex;
   align-items: center;
-  transition: 0.2s;
-  color: var(--colors--neutral--200);
+  transition: color 0.2s ease;
+  color: var(--colors--neutral--400);
 
   &:hover {
-    background-color: var(--colors--neutral--500);
     color: var(--color-white);
   }
 }
@@ -29,5 +33,9 @@
   font-weight: 500;
   line-height: 18px;
   white-space: nowrap;
+}
+
+.active {
+  color: var(--color-white);
 }
 

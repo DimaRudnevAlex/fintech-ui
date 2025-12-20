@@ -53,15 +53,27 @@ const SideMenu: React.FC = () => {
           Icon={<HandCoins />}
           extended={extended}
         >
-          <SublistItem label={'Transfer fiat'} href={ROUTES.TRANSFERS_FIAT} />
-          <SublistItem label={'Transfer Crypt'} href={ROUTES.TRANSFERS_CRYPT} />
+          <SublistItem
+            label={'Transfer fiat'}
+            href={ROUTES.TRANSFERS_FIAT}
+            extended={extended}
+          />
+          <SublistItem
+            label={'Transfer Crypt'}
+            href={ROUTES.TRANSFERS_CRYPT}
+            extended={extended}
+          />
         </AsideNestedItem>
         <AsideNestedItem
           label={'Accounts'}
           Icon={<WalletCards />}
           extended={extended}
         >
-          <SublistItem label={'Accounts fiat'} href={ROUTES.ACCOUNTS} />
+          <SublistItem
+            label={'Accounts fiat'}
+            href={ROUTES.ACCOUNTS}
+            extended={extended}
+          />
         </AsideNestedItem>
       </ul>
     </motion.aside>

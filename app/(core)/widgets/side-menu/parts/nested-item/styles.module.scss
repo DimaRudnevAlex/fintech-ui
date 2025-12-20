@@ -1,7 +1,6 @@
 .root {
   width: 100%;
   position: relative;
-
 }
 
 .item {
@@ -9,11 +8,11 @@
   display: flex;
   width: 100%;
   align-items: center;
-  color: var(--colors--neutral--200);
+  transition: color 0.2s ease;
+  color: var(--colors--neutral--400);
   cursor: pointer;
 
   &:hover {
-    background-color: var(--colors--neutral--500);
     color: var(--color-white);
   }
 }
@@ -42,6 +41,6 @@
   border-color: rgb(128 134 145 / 60%) transparent transparent;
 }
 
-.sublist {
-  overflow: hidden;
+.active {
+  color: var(--color-white);
 }

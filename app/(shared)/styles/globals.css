@@ -103,3 +103,13 @@ table {
         transform: rotate(360deg);
     }
 }
+
+.verticalIndicator {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    border-radius: 2px;
+    background-color: var(--colors--neutral--200);
+}
