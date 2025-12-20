@@ -2,13 +2,20 @@
   position: fixed;
   left: 0;
   top: 0;
-  background-color: var(--colors--neutral--600);
+  background-color: rgba(30, 30, 30, 0.8);
   height: 100vh;
   font-weight: 500;
   width: 68px;
   z-index: 1000;
   overflow: hidden;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  backdrop-filter: blur(0px);
 
+  &.expanded {
+    backdrop-filter: blur(10px);
+    background-color: rgba(30, 30, 30, 0.7);
+  }
   .menu {
     margin-top: 20px;
   }

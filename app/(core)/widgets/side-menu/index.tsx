@@ -53,7 +53,7 @@ const SideMenu: React.FC = () => {
         stiffness: 260,
         damping: 28,
       }}
-      className={clsx(styles.aside)}
+      className={clsx(styles.aside, extended && styles.expanded)}
     >
       <AsideTop extended={extended} />
 

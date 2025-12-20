@@ -9,7 +9,7 @@ const BaseLayout: React.FC<WithChildren> = ({ children }) => (
   <div className={styles.page}>
     <Header />
     <SideMenu />
-    <div className={styles.content}>{children}</div>
+    <main className={styles.content}>{children}</main>
   </div>
 );
 
