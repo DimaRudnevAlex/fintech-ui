@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
-import { ROUTES } from '@/(shared)/constansts/routes';
+import { ROUTES } from '@/(shared)/constants/routes';
 
 const Page = () => {
   redirect(ROUTES.PROFILE);

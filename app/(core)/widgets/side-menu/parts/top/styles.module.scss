@@ -1,0 +1,41 @@
+.top {
+  gap: 0 12px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 68px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--color-primary-dark);
+  }
+}
+
+.icon {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-left: 18px;
+}
+
+.text {
+  width: 112px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(10px);
+  transition:
+    opacity 1s,
+    font-size 0.1s ease-out,
+    transform 0.5s;
+}
+
+:global(.extended) {
+  .text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

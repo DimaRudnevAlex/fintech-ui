@@ -5,8 +5,8 @@
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
+    background: var(--colors--neutral--700);
+    color: var(--colors--neutral--100);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-width: 1280px;
