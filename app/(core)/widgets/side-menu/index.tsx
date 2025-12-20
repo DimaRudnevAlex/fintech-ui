@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { motion, Variants } from 'framer-motion';
@@ -26,10 +26,26 @@ const asideVariants: Variants = {
 
 const SideMenu: React.FC = () => {
   const [extended, setExtended] = useState<boolean>(false);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setExtended(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setExtended(false);
+    }, 80);
+  };
+
   return (
     <motion.aside
-      onMouseEnter={() => setExtended(true)}
-      onMouseLeave={() => setExtended(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       variants={asideVariants}
       animate={extended ? 'expanded' : 'collapsed'}
       transition={{
@@ -37,7 +53,7 @@ const SideMenu: React.FC = () => {
         stiffness: 260,
         damping: 28,
       }}
-      className={clsx(styles.aside, extended && 'extended')}
+      className={clsx(styles.aside)}
     >
       <AsideTop extended={extended} />
 
