@@ -1,5 +1,5 @@
 const Page: React.FC = () => {
-  return <div>Transfers crypt</div>;
+  return <div>Transfer crypt</div>;
 };
 
 export default Page;

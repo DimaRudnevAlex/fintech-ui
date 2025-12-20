@@ -1,12 +1,16 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { clsx } from 'clsx';
-import { motion, Variants } from 'framer-motion';
+import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { HandCoins, User, WalletCards } from 'lucide-react';
 
 import { ROUTES } from '@/(shared)/constants/routes';
+
+import { HEADER_TITLES } from '@/(core)/widgets/header/model/config';
+import LanguageSwitcher from '@/(core)/widgets/language-switcher';
 
 import AsideNestedItem from './parts/nested-item';
 import AsideSingleItem from './parts/single-item';
@@ -27,6 +31,7 @@ const asideVariants: Variants = {
 const SideMenu: React.FC = () => {
   const [extended, setExtended] = useState<boolean>(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const t = useTranslations('sideBar');
 
   const handleMouseEnter = () => {
     if (closeTimeoutRef.current) {
@@ -59,39 +64,53 @@ const SideMenu: React.FC = () => {
 
       <ul className={styles.menu}>
         <AsideSingleItem
-          label="Profile"
+          label={t(HEADER_TITLES[ROUTES.PROFILE])}
           href={ROUTES.PROFILE}
           Icon={<User />}
           extended={extended}
         />
         <AsideNestedItem
-          label={'Transfers'}
+          label={t('transfers')}
           Icon={<HandCoins />}
           extended={extended}
         >
           <SublistItem
-            label={'Transfer fiat'}
-            href={ROUTES.TRANSFERS_FIAT}
+            label={t(HEADER_TITLES[ROUTES.TRANSFER_FIAT])}
+            href={ROUTES.TRANSFER_FIAT}
             extended={extended}
           />
           <SublistItem
-            label={'Transfer Crypt'}
-            href={ROUTES.TRANSFERS_CRYPT}
+            label={t(HEADER_TITLES[ROUTES.TRANSFER_CRYPT])}
+            href={ROUTES.TRANSFER_CRYPT}
             extended={extended}
           />
         </AsideNestedItem>
         <AsideNestedItem
-          label={'Accounts'}
+          label={t('accounts')}
           Icon={<WalletCards />}
           extended={extended}
         >
           <SublistItem
-            label={'Accounts fiat'}
+            label={t(HEADER_TITLES[ROUTES.ACCOUNTS])}
             href={ROUTES.ACCOUNTS}
             extended={extended}
           />
         </AsideNestedItem>
       </ul>
+      <div className={styles.languageWrapper}>
+        <AnimatePresence>
+          {extended && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+            >
+              <LanguageSwitcher />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.aside>
   );
 };

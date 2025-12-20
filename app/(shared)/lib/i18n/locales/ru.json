@@ -1,0 +1,15 @@
+{
+  "titlePage": {
+    "profile": "Профиль",
+    "transferFiat": "Перевод фиат денег",
+    "transferCrypt": "Перевод крипты",
+    "accounts": "Счета"
+  },
+  "sideBar": {
+    "profile": "Профиль",
+    "transfers": "Переводы",
+    "transferFiat": "Перевод фиат денег",
+    "transferCrypt": "Перевод крипты",
+    "accounts": "Счета"
+  }
+}

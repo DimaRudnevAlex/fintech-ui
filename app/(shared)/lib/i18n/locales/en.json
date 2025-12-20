@@ -1,0 +1,15 @@
+{
+  "titlePage": {
+    "profile": "Profile",
+    "transferFiat": "Transfer Fiat",
+    "transferCrypt": "Transfer Crypt",
+    "accounts": "Accounts"
+  },
+  "sideBar": {
+    "profile": "Profile",
+    "transfers": "Transfers",
+    "transferFiat": "Transfer Fiat",
+    "transferCrypt": "Transfer Crypt",
+    "accounts": "Accounts"
+  }
+}
