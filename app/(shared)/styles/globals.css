@@ -88,7 +88,7 @@ table {
 }
 
 .loading svg {
-    color: var(--color-primary);
+    color: var(--colors--neutral--500);
     /*width: var(--size-50);*/
     /*height: var(--size-50);*/
     animation: spin 2s alternate infinite;
