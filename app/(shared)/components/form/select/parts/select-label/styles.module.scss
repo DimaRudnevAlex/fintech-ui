@@ -1,0 +1,11 @@
+.label {
+  user-select: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--colors--neutral--400);
+  text-wrap: nowrap;
+
+  &:hover {
+    color: var(--color-white);
+  }
+}

@@ -1,0 +1,22 @@
+.content {
+  background: var(--colors--neutral--700);
+  border: 1px solid var(--colors--neutral--600);
+  border-radius: 12px;
+
+  min-width: var(--radix-select-trigger-width);
+  max-width: var(--radix-select-content-available-width);
+
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transform-origin: top center;
+}
+
+.viewport {
+  padding: 6px;
+}
+.empty {
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--colors--neutral--400);
+  user-select: none;
+}

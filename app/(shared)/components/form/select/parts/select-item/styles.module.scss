@@ -1,0 +1,43 @@
+.item {
+  position: relative;
+  padding: 10px 36px 10px 32px;
+  border-radius: 8px;
+
+  color: var(--colors--neutral--200);
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+          background 0.15s ease,
+          color 0.15s ease;
+
+  &:hover:not([data-state='checked']) {
+    background: var(--colors--neutral--600);
+  }
+
+  &[data-state='checked'] {
+    background: var(--select-accent-bg);
+    color: var(--select-accent-text);
+    font-weight: 500;
+  }
+
+  &[data-highlighted] {
+    outline: 1px solid var(--select-accent-border);
+    outline-offset: -1px;
+  }
+}
+
+.indicator {
+  position: absolute;
+  left: 10px;
+
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.item[data-state='checked'] .indicator {
+  opacity: 1;
+  transform: scale(1);
+  color: var(--select-accent-text);
+}
