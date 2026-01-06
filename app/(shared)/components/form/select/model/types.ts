@@ -12,4 +12,5 @@ export type SelectProps<TOption extends SelectOption = SelectOption> = {
   options: TOption[];
   label?: string;
   className?: string;
+  errors?: string[];
 };

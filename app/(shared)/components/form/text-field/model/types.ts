@@ -4,4 +4,6 @@ export type TextFieldProps = {
   value: string;
   onChange: (value: string) => void;
   className?: string;
+  errors?: string[];
+  id?: string;
 };

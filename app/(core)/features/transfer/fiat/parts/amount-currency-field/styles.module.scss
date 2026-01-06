@@ -1,6 +1,6 @@
 .content {
   display: flex;
-  align-items: flex-end;
+  align-items: start;
   gap: 20px;
 }
 .amount {
@@ -11,7 +11,6 @@
   width: 1px;
   height: 40px;
   background: #e5e7eb;
-  align-self: end;
 }
 
 .label {
@@ -22,6 +21,10 @@
   color: var(--colors--neutral--400);
   text-wrap: nowrap;
   padding-bottom: 10px;
+
+  &:hover {
+    color: var(--color-white);
+  }
 }
 
 

@@ -26,6 +26,10 @@
     align-items: center;
     gap: 12px;
   }
+
+  &.hasError {
+    border-color: var(--color-red-alarm);
+  }
 }
 
 .icon {

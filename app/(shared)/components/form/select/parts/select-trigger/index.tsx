@@ -1,4 +1,5 @@
 import * as RadixSelect from '@radix-ui/react-select';
+import { clsx } from 'clsx';
 import { ChevronDown } from 'lucide-react';
 
 import { SelectTriggerProps } from './model/types';
@@ -9,9 +10,13 @@ const SelectTrigger: React.FC<SelectTriggerProps> = ({
   placeholder = 'Выберите значение',
   isLoading,
   id,
+  hasError,
 }) => {
   return (
-    <RadixSelect.Trigger className={styles.trigger} id={id}>
+    <RadixSelect.Trigger
+      className={clsx(styles.trigger, hasError && styles.hasError)}
+      id={id}
+    >
       <RadixSelect.Value placeholder={placeholder} />
       <div className={styles.right}>
         <div className={styles.loaderWrapper}>

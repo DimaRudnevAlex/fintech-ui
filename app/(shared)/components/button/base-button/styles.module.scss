@@ -72,9 +72,10 @@
   background-color: var(--colors--primary--100);
   color: var(--neutral-100);
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled), &:active {
     background-color: var(--colors--secondary--100);
   }
+
 }
 
 .secondary {

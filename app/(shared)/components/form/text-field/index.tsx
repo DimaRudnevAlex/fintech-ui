@@ -16,19 +16,24 @@ const TextField: React.FC<TextFieldProps> = ({
   label,
   placeholder,
   className,
+  errors = [],
+  id,
 }) => {
-  const id = useId();
+  const idInput = useId();
+  const hasError = errors.length > 0;
 
   return (
-    <div className={clsx(styles.wrapper, className)}>
+    <div
+      className={clsx(styles.wrapper, hasError && styles.hasError, className)}
+    >
       {label && (
-        <label htmlFor={id} className={styles.label}>
+        <label htmlFor={id ?? idInput} className={styles.label}>
           {label}
         </label>
       )}
       <div className={styles.inputWrapper}>
         <input
-          id={id}
+          id={id ?? idInput}
           type="text"
           className={styles.input}
           onChange={(e) => onChange(e.target.value)}
@@ -41,14 +46,32 @@ const TextField: React.FC<TextFieldProps> = ({
               type="button"
               className={styles.clearButton}
               onClick={() => onChange('')}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.15 }}
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             >
               <X size={16} strokeWidth={3} />
             </motion.button>
           )}
+        </AnimatePresence>
+      </div>
+
+      <div className={styles.errorWrapper}>
+        <AnimatePresence>
+          {errors.map((error) => (
+            <motion.div
+              layout
+              key={error}
+              className={styles.error}
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+            >
+              {error}
+            </motion.div>
+          ))}
         </AnimatePresence>
       </div>
     </div>

@@ -23,6 +23,7 @@ const options: SelectOption<{ icon?: string }>[] = [
 const TransferFiatForm = () => {
   const [value, setValue] = useState<SelectOption | undefined>();
   const [text, setText] = useState<string>('');
+
   return (
     <div className={styles.wrapper}>
       <Select

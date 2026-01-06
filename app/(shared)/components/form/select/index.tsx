@@ -1,6 +1,7 @@
 import { useId } from 'react';
 
 import { clsx } from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import {
   SelectOption,
@@ -22,6 +23,7 @@ const Select = <TOption extends SelectOption>({
   value,
   label,
   className,
+  errors = [],
 }: SelectProps<TOption>) => {
   const id = useId();
 
@@ -33,11 +35,30 @@ const Select = <TOption extends SelectOption>({
           isLoading={isLoading}
           placeholder={placeholder}
           id={id}
+          hasError={errors.length > 0}
         />
         <SelectContent options={options}>
           <SelectItems options={options} />
         </SelectContent>
       </SelectRoot>
+
+      <div className={styles.errorWrapper}>
+        <AnimatePresence>
+          {errors.map((error) => (
+            <motion.div
+              layout
+              key={error}
+              className={styles.error}
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+            >
+              {error}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
