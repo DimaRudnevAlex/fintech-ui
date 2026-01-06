@@ -7,13 +7,15 @@ import { SelectTriggerProps } from './model/types';
 import styles from './styles.module.scss';
 
 const SelectTrigger: React.FC<SelectTriggerProps> = ({
-  placeholder = 'Выберите значение',
+  placeholder,
   isLoading,
   id,
   hasError,
+  onBlur,
 }) => {
   return (
     <RadixSelect.Trigger
+      onBlur={onBlur}
       className={clsx(styles.trigger, hasError && styles.hasError)}
       id={id}
     >

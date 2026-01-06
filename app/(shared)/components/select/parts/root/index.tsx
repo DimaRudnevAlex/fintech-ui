@@ -2,7 +2,7 @@
 
 import * as RadixSelect from '@radix-ui/react-select';
 
-import { SelectOption } from '@/(shared)/components/form/select/model/types';
+import { SelectOption } from '@/(shared)/components/select/model/types';
 
 import { SelectRootProps } from './model/types';
 

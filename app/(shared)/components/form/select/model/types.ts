@@ -1,16 +1,6 @@
-export type SelectOption<TMeta = unknown> = {
-  label: string;
-  value: string;
-  meta?: TMeta;
-};
+import { SelectProps } from '@/(shared)/components/select/model/types';
 
-export type SelectProps<TOption extends SelectOption = SelectOption> = {
-  value?: TOption;
-  placeholder?: string;
-  onChange: (option: TOption) => void;
-  isLoading?: boolean;
-  options: TOption[];
-  label?: string;
-  className?: string;
-  errors?: string[];
-};
+export type ConnectedSelectProps = Omit<
+  SelectProps,
+  'onChange' | 'value' | 'errors'
+>;

@@ -1,9 +1,6 @@
-export type TextFieldProps = {
-  label?: string;
-  placeholder?: string;
-  value: string;
-  onChange: (value: string) => void;
-  className?: string;
-  errors?: string[];
-  id?: string;
-};
+import { TextFieldProps } from '@/(shared)/components/text-field/model/types';
+
+export type ConnectedTextFieldProps = Omit<
+  TextFieldProps,
+  'onChange' | 'value' | 'errors'
+>;

@@ -25,6 +25,7 @@ export default defineConfig([
     },
 
     rules: {
+      'react/no-children-prop': 'off',
       'simple-import-sort/imports': [
         'error',
         {

@@ -1,59 +1,63 @@
 'use client';
 
-import { useId, useState } from 'react';
+import { useId } from 'react';
 
-import Select from '@/(shared)/components/form/select';
-import TextField from '@/(shared)/components/form/text-field';
+import TextField from 'app/(shared)/components/text-field';
+
+import { withForm } from '@/(shared)/hooks/form';
+
+import {
+  currencyOptions,
+  defaultValues,
+} from '@/(core)/features/transfer/fiat/model/constants';
 
 import styles from './styles.module.scss';
 
-export type CurrencyOption = {
-  value: string;
-  label: string;
-  meta: {
-    symbol: string;
-    flag: string;
-  };
-};
-const currencyOptions: CurrencyOption[] = [
-  { value: 'USD', label: 'USD', meta: { symbol: '$', flag: '🇺🇸' } },
-  { value: 'EUR', label: 'EUR', meta: { symbol: '€', flag: '🇪🇺' } },
-  { value: 'RUB', label: 'RUB', meta: { symbol: '₽', flag: '🇷🇺' } },
-];
+const AmountCurrencyField = withForm({
+  defaultValues: defaultValues,
+  render: function Render({ form }) {
+    const id = useId();
 
-const AmountCurrencyField: React.FC = () => {
-  const [amount, setAmount] = useState<string>('');
-  const [currency, setCurrency] = useState<CurrencyOption>(currencyOptions[0]);
-  const id = useId();
-  const handleAmountChange = (v: string) => {
-    if (/^\d*([.,]\d{0,2})?$/.test(v)) {
-      setAmount(v);
-    }
-  };
-  return (
-    <div>
-      <label htmlFor={id} className={styles.label}>
-        {'Сумма для перевода:'}
-      </label>
-      <div className={styles.content}>
-        <TextField
-          value={amount}
-          onChange={handleAmountChange}
-          placeholder="0.00"
-          className={styles.amount}
-          id={id}
-        />
+    const handleAmountChange = (v: string) => {
+      if (/^\d*([.,]\d{0,2})?$/.test(v)) {
+        form.setFieldValue('amount', v);
+      }
+    };
 
-        <div className={styles.divider} />
+    return (
+      <div>
+        <label htmlFor={id} className={styles.label}>
+          {'Сумма для перевода:'}
+        </label>
+        <div className={styles.content}>
+          <form.Field
+            name={'amount'}
+            children={(field) => (
+              <TextField
+                value={field.state.value}
+                onChange={handleAmountChange}
+                placeholder="0.00"
+                className={styles.amount}
+                id={id}
+                errors={field.state.meta.errors.map(
+                  (e) => (e as unknown as { message: string })?.message,
+                )}
+              />
+            )}
+          />
 
-        <Select
-          options={currencyOptions}
-          value={currency}
-          onChange={setCurrency}
-        />
+          <div className={styles.divider} />
+
+          <form.AppField
+            name="currency"
+            children={(field) => (
+              <field.SelectField options={currencyOptions} />
+            )}
+          />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  },
+});
 
 export default AmountCurrencyField;

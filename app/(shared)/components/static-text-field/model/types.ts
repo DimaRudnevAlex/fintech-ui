@@ -1,4 +1,4 @@
 export type StaticTextFieldProps = {
   label?: string;
-  value?: string;
+  value?: string | number | null;
 };

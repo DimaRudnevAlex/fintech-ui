@@ -31,6 +31,7 @@ export const BaseButton: React.FC<ButtonProps & HTMLMotionProps<'button'>> = ({
         className,
       )}
       disabled={disabled || isLoading}
+      type="button"
       {...props}
     >
       <span className={clsx(styles.content, isLoading && styles.loading)}>

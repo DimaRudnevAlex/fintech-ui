@@ -1,4 +1,4 @@
-import { SelectOption } from '@/(shared)/components/form/select/model/types';
+import { SelectOption } from '@/(shared)/components/select/model/types';
 
 export type SelectRootProps<TOption extends SelectOption> = {
   value?: TOption;
