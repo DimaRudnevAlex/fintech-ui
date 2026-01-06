@@ -1,5 +1,8 @@
-import { SelectProps } from '../../../model/types';
+import { SelectOption } from '@/(shared)/components/form/select/model/types';
 
-export type SelectRootProps = Omit<SelectProps, 'placeholder' | 'isLoading'> & {
+export type SelectRootProps<TOption extends SelectOption> = {
+  value?: TOption;
+  options: TOption[];
+  onChange?: (option: TOption) => void;
   children: React.ReactNode;
 };

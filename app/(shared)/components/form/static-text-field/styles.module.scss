@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  user-select: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--colors--neutral--400);
+  text-wrap: nowrap;
+  padding-bottom: 10px;
+}
+
+.staticInput {
+  padding: 10px 12px;
+  font-size: 13px;
+  border-radius: 10px;
+  background: var(--colors--neutral--600);
+  border: 1px solid var(--colors--neutral--500);
+  color: var(--colors--neutral--100);
+  width: 100%;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

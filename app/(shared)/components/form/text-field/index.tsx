@@ -2,6 +2,7 @@
 
 import { useId } from 'react';
 
+import { clsx } from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 
@@ -14,11 +15,12 @@ const TextField: React.FC<TextFieldProps> = ({
   onChange,
   label,
   placeholder,
+  className,
 }) => {
   const id = useId();
 
   return (
-    <div className={styles.wrapper}>
+    <div className={clsx(styles.wrapper, className)}>
       {label && (
         <label htmlFor={id} className={styles.label}>
           {label}

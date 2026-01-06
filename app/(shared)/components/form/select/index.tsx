@@ -1,6 +1,11 @@
 import { useId } from 'react';
 
-import { SelectProps } from '@/(shared)/components/form/select/model/types';
+import { clsx } from 'clsx';
+
+import {
+  SelectOption,
+  SelectProps,
+} from '@/(shared)/components/form/select/model/types';
 import SelectRoot from '@/(shared)/components/form/select/parts/root';
 import SelectContent from '@/(shared)/components/form/select/parts/select-content';
 import SelectItems from '@/(shared)/components/form/select/parts/select-item';
@@ -9,18 +14,19 @@ import SelectTrigger from '@/(shared)/components/form/select/parts/select-trigge
 
 import styles from './styles.module.scss';
 
-const Select: React.FC<SelectProps> = ({
+const Select = <TOption extends SelectOption>({
   options,
   isLoading,
   onChange,
   placeholder,
   value,
   label,
-}) => {
+  className,
+}: SelectProps<TOption>) => {
   const id = useId();
 
   return (
-    <div className={styles.wrapper}>
+    <div className={clsx(styles.wrapper, className)}>
       <SelectLabel id={id} label={label} />
       <SelectRoot value={value} onChange={onChange} options={options}>
         <SelectTrigger

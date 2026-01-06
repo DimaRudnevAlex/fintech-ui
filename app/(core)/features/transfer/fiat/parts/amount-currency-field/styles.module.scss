@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+.amount {
+  flex: 1;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: #e5e7eb;
+  align-self: center;
+}
+
+.label {
+  display: block;
+  user-select: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--colors--neutral--400);
+  text-wrap: nowrap;
+  padding-bottom: 10px;
+}
+
+
