@@ -32,9 +32,9 @@ const AmountCurrencyField: React.FC = () => {
   };
   return (
     <div>
-      <span className={styles.label}>{'Сумма для перевода:'}</span>
       <div className={styles.content}>
         <TextField
+          label={'Сумма для перевода:'}
           value={amount}
           onChange={handleAmountChange}
           placeholder="0.00"
