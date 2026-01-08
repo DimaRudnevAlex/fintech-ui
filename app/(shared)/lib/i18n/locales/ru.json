@@ -11,5 +11,27 @@
     "transferFiat": "Перевод фиат денег",
     "transferCrypt": "Перевод крипты",
     "accounts": "Счета"
+  },
+  "transferFiat": {
+    "form": {
+      "senderAccounts": "Ваши счета",
+      "recipientAccount": "Номер счета",
+      "amount": "Сумма для перевода",
+      "commission": "Комиссия",
+      "totalAmount": "Итоговая сумма",
+      "translate": "Перевести",
+      "errors": {
+        "enterAccount": "Введите номер счета",
+        "selectDebitAccount": "Выберите счет списания",
+        "enterAmount": "Введите сумму",
+        "chooseCurrency": "Выберите валюту",
+        "enterCorrectAmount": "Введите корректную сумму",
+        "insufficientFundsInAccount": "Недостаточно средств на счете"
+      }
+    },
+    "notification": {
+      "done": "Готово",
+      "sentMoney": "Деньги успешно переведены"
+    }
   }
 }

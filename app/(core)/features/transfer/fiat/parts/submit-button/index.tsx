@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import { ArrowLeftRight } from 'lucide-react';
 
 import { BaseButton } from '@/(shared)/components/button';
@@ -10,6 +12,8 @@ import styles from './styles.module.scss';
 const SubmitButton = withForm({
   defaultValues: defaultValues,
   render: function Render({ form }) {
+    const t = useTranslations('transferFiat.form');
+
     return (
       <div className={styles.submit}>
         <BaseButton
@@ -17,7 +21,7 @@ const SubmitButton = withForm({
           size="lg"
           onClick={() => form.handleSubmit()}
         >
-          {'Перевести'}
+          {t('translate')}
         </BaseButton>
       </div>
     );

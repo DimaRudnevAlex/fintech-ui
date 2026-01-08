@@ -2,7 +2,9 @@ import { JSX } from 'react';
 import { Montserrat } from 'next/font/google';
 import { getLocale, getTimeZone } from 'next-intl/server';
 
+import { ConfirmationProvider } from '@/(shared)/lib/providers/confirmation-provider';
 import { LocaleProvider } from '@/(shared)/lib/providers/locale-provider';
+import { NotificationProvider } from '@/(shared)/lib/providers/notification-provider';
 import { Locale } from '@/(shared)/types/general';
 
 import '@/(shared)/styles/globals.css';
@@ -30,7 +32,9 @@ const RootLayout = async ({
           localeServer={locale as Locale}
           timeZoneServer={timeZone}
         >
-          {children}
+          <ConfirmationProvider>
+            <NotificationProvider>{children}</NotificationProvider>
+          </ConfirmationProvider>
         </LocaleProvider>
       </body>
     </html>

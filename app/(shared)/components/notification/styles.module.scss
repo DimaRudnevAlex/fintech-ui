@@ -1,0 +1,85 @@
+.container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notification {
+  will-change: transform, opacity;
+  width: 340px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  background: rgba(30, 30, 30, 0.65);
+  color: white;
+  box-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.35),
+          inset 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.description {
+  margin-top: 4px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
+}
+
+/* progress bar */
+.progress {
+  height: 2px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.progressInner {
+  height: 100%;
+  transform-origin: left;
+}
+
+/* colors */
+.success {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.error {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.warning {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}

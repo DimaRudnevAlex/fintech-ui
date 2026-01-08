@@ -1,6 +1,7 @@
 'use client';
 
 import { useId } from 'react';
+import { useTranslations } from 'next-intl';
 
 import TextField from 'app/(shared)/components/text-field';
 
@@ -16,6 +17,7 @@ import styles from './styles.module.scss';
 const AmountCurrencyField = withForm({
   defaultValues: defaultValues,
   render: function Render({ form }) {
+    const t = useTranslations('transferFiat.form');
     const id = useId();
 
     const handleAmountChange = (v: string) => {
@@ -27,7 +29,7 @@ const AmountCurrencyField = withForm({
     return (
       <div>
         <label htmlFor={id} className={styles.label}>
-          {'Сумма для перевода:'}
+          {t('amount')}
         </label>
         <div className={styles.content}>
           <form.Field

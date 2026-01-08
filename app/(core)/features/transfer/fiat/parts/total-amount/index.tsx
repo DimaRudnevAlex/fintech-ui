@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl';
+
 import { useStore } from '@tanstack/react-form';
 
 import StaticTextField from '@/(shared)/components/static-text-field';
@@ -14,6 +16,8 @@ const TotalAmount = withForm({
     commission: null,
   } as { commission: number | null },
   render: function Render({ form, commission }) {
+    const t = useTranslations('transferFiat.form');
+
     const { currency, amount } = useStore(form.store, (state) => ({
       amount: state.values.amount,
       currency: state.values.currency,
@@ -24,11 +28,11 @@ const TotalAmount = withForm({
     return (
       <div className={styles.wrapper}>
         <StaticTextField
-          label={'Комиссия:'}
+          label={t('commission')}
           value={commission && `${commission} %`}
         />
         <StaticTextField
-          label={'Итоговая сумма:'}
+          label={t('totalAmount')}
           value={currency && totalAmount && `${totalAmount} ${currency.label}`}
         />
       </div>

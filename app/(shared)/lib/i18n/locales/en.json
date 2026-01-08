@@ -11,5 +11,27 @@
     "transferFiat": "Transfer Fiat",
     "transferCrypt": "Transfer Crypt",
     "accounts": "Accounts"
+  },
+  "transferFiat": {
+    "form": {
+      "senderAccounts": "Your accounts",
+      "recipientAccount": "Account number",
+      "amount": "Transfer amount",
+      "commission": "Commission",
+      "totalAmount": "Total amount",
+      "translate": "Translate",
+      "errors": {
+        "enterAccount": "Enter the account number",
+        "selectDebitAccount": "Select a debit account",
+        "enterAmount": "Enter the amount",
+        "chooseCurrency": "Choose a currency",
+        "enterCorrectAmount": "Enter the correct amount",
+        "insufficientFundsInAccount": "Insufficient funds in the account"
+      }
+    },
+    "notification": {
+      "done": "Done",
+      "sentMoney": "Money has been successfully transferred"
+    }
   }
 }

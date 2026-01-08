@@ -1,26 +1,34 @@
 'use client';
 
-import { useAppForm } from '@/(shared)/hooks/form';
+import { useTranslations } from 'next-intl';
 
-import {
-  defaultValues,
-  options,
-} from '@/(core)/features/transfer/fiat/model/constants';
-import { transferSchema } from '@/(core)/features/transfer/fiat/model/schema';
-import AmountCurrencyField from '@/(core)/features/transfer/fiat/parts/amount-currency-field';
-import SubmitButton from '@/(core)/features/transfer/fiat/parts/submit-button';
-import TotalAmount from '@/(core)/features/transfer/fiat/parts/total-amount';
+import { useAppForm } from '@/(shared)/hooks/form';
+import { useConfirmation } from '@/(shared)/lib/providers/confirmation-provider';
+
+import { defaultValues, options } from './model/constants';
+import { transferSchema } from './model/schema';
+import AmountCurrencyField from './parts/amount-currency-field';
+import SubmitButton from './parts/submit-button';
+import TotalAmount from './parts/total-amount';
 
 import styles from './styles.module.scss';
 
 const TransferFiatForm = () => {
+  const t = useTranslations('transferFiat.form');
+  const tNotification = useTranslations('transferFiat.notification');
+  const confirmSuccess = useConfirmation();
+
   const form = useAppForm({
     defaultValues: defaultValues,
-    onSubmit: ({ value }) => {
-      console.log(value);
+    onSubmit: ({ formApi }) => {
+      confirmSuccess({
+        title: tNotification('done'),
+        subtitle: tNotification('sentMoney'),
+      });
+      formApi.reset();
     },
     validators: {
-      onChange: transferSchema,
+      onChange: transferSchema(t),
     },
   });
 
@@ -30,8 +38,8 @@ const TransferFiatForm = () => {
         name="senderAccount"
         children={(field) => (
           <field.SelectField
-            label={'Ваши счета:'}
-            placeholder={'Ваши счета'}
+            label={t('senderAccounts')}
+            placeholder={t('senderAccounts')}
             options={options}
           />
         )}
@@ -40,7 +48,10 @@ const TransferFiatForm = () => {
       <form.AppField
         name="recipientAccount"
         children={(field) => (
-          <field.TextField placeholder="Номер счета" label={'Номер счета:'} />
+          <field.TextField
+            placeholder={t('recipientAccount')}
+            label={t('recipientAccount')}
+          />
         )}
       />
 
