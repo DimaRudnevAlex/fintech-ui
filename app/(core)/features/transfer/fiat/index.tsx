@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl';
 
+import { motion } from 'framer-motion';
+
 import { useAppForm } from '@/(shared)/hooks/form';
 import { useConfirmation } from '@/(shared)/lib/providers/confirmation-provider';
 
@@ -33,7 +35,13 @@ const TransferFiatForm = () => {
   });
 
   return (
-    <form className={styles.wrapper} onSubmit={(e) => e.preventDefault()}>
+    <motion.form
+      className={styles.wrapper}
+      onSubmit={(e) => e.preventDefault()}
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    >
       <form.AppField
         name="senderAccount"
         children={(field) => (
@@ -60,7 +68,7 @@ const TransferFiatForm = () => {
       <TotalAmount form={form} commission={10} />
 
       <SubmitButton form={form} />
-    </form>
+    </motion.form>
   );
 };
 

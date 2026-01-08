@@ -3,4 +3,5 @@ export const HEADER_TITLES: Record<string, string> = {
   '/transfer-fiat': 'transferFiat',
   '/transfer-crypt': 'transferCrypt',
   '/accounts': 'accounts',
+  '/history': 'history',
 };

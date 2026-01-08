@@ -84,9 +84,14 @@ const SideMenu: React.FC = () => {
             href={ROUTES.TRANSFER_CRYPT}
             extended={extended}
           />
+          <SublistItem
+            label={t(HEADER_TITLES[ROUTES.HISTORY])}
+            href={ROUTES.HISTORY}
+            extended={extended}
+          />
         </AsideNestedItem>
         <AsideNestedItem
-          label={t('accounts')}
+          label={t(HEADER_TITLES[ROUTES.ACCOUNTS])}
           Icon={<WalletCards />}
           extended={extended}
         >

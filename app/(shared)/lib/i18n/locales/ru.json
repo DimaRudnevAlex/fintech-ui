@@ -3,14 +3,16 @@
     "profile": "Профиль",
     "transferFiat": "Перевод фиат денег",
     "transferCrypt": "Перевод крипты",
-    "accounts": "Счета"
+    "accounts": "Счета",
+    "history": "История переводов"
   },
   "sideBar": {
     "profile": "Профиль",
     "transfers": "Переводы",
     "transferFiat": "Перевод фиат денег",
     "transferCrypt": "Перевод крипты",
-    "accounts": "Счета"
+    "accounts": "Счета",
+    "history": "История"
   },
   "transferFiat": {
     "form": {

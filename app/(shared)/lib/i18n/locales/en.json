@@ -3,14 +3,16 @@
     "profile": "Profile",
     "transferFiat": "Transfer Fiat",
     "transferCrypt": "Transfer Crypt",
-    "accounts": "Accounts"
+    "accounts": "Accounts",
+    "history": "Transaction history"
   },
   "sideBar": {
     "profile": "Profile",
     "transfers": "Transfers",
     "transferFiat": "Transfer Fiat",
     "transferCrypt": "Transfer Crypt",
-    "accounts": "Accounts"
+    "accounts": "Accounts",
+    "history": "History"
   },
   "transferFiat": {
     "form": {
