@@ -1,0 +1,40 @@
+.tabs {
+  position: relative;
+  display: flex;
+  background-color: var(--colors--neutral--600);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.tabs button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--colors--neutral--500);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.tabs button:hover {
+  color: var(--colors--neutral--300);
+}
+
+.tabs .active {
+  color: var(--colors--neutral--200);
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: var(--colors--primary--100);
+  border-radius: 10px;
+}

@@ -1,6 +1,6 @@
 import { Data } from '@/(core)/features/history-transfer/fiat/model/types';
 
-export const mockTransactions: Data[] = [
+export const mockTransactionsFiat: Data[] = [
   {
     id: '1',
     type: 'Оплата картой',
@@ -64,5 +64,72 @@ export const mockTransactions: Data[] = [
     status: 'Зачислено',
     details: 'Возврат средств за отменённый заказ',
     amount: 7990,
+  },
+];
+
+export const mockTransactionsCrypto: Data[] = [
+  {
+    id: 'c1',
+    type: 'Отправка',
+    createdAt: '6 декабря 2025',
+    status: 'Завершено',
+    details: 'Перевод BTC на внешний кошелёк',
+    amount: -0.025,
+  },
+  {
+    id: 'c2',
+    type: 'Получение',
+    createdAt: '5 декабря 2025',
+    status: 'Зачислено',
+    details: 'Поступление ETH от пользователя',
+    amount: 1.45,
+  },
+  {
+    id: 'c3',
+    type: 'Обмен',
+    createdAt: '4 декабря 2025',
+    status: 'Завершено',
+    details: 'Обмен USDT на BTC',
+    amount: 0.012,
+  },
+  {
+    id: 'c4',
+    type: 'Комиссия сети',
+    createdAt: '3 декабря 2025',
+    status: 'Списано',
+    details: 'Комиссия за перевод ETH',
+    amount: -0.0032,
+  },
+  {
+    id: 'c5',
+    type: 'Получение',
+    createdAt: '1 декабря 2025',
+    status: 'Зачислено',
+    details: 'Стейкинг-награда (SOL)',
+    amount: 12.8,
+  },
+  {
+    id: 'c6',
+    type: 'Отправка',
+    createdAt: '28 ноября 2025',
+    status: 'Завершено',
+    details: 'Перевод USDT другу',
+    amount: -250,
+  },
+  {
+    id: 'c7',
+    type: 'Обмен',
+    createdAt: '26 ноября 2025',
+    status: 'Завершено',
+    details: 'Обмен BTC на USDT',
+    amount: 500,
+  },
+  {
+    id: 'c8',
+    type: 'Получение',
+    createdAt: '24 ноября 2025',
+    status: 'Зачислено',
+    details: 'Airdrop токенов',
+    amount: 1500,
   },
 ];

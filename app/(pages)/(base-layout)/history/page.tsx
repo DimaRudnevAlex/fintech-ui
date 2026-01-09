@@ -1,9 +1,7 @@
-import { mockTransactions } from '@/(pages)/(base-layout)/history/mock';
-
-import HistoryFiat from '@/(core)/features/history-transfer/fiat';
+import HistoryWidget from '@/(core)/widgets/history';
 
 const Page: React.FC = () => {
-  return <HistoryFiat data={mockTransactions} />;
+  return <HistoryWidget />;
 };
 
 export default Page;
