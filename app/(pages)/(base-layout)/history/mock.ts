@@ -1,0 +1,68 @@
+import { Data } from '@/(core)/features/history-transfer/fiat/model/types';
+
+export const mockTransactions: Data[] = [
+  {
+    id: '1',
+    type: 'Оплата картой',
+    createdAt: '5 декабря 2025',
+    status: 'Завершено',
+    details: 'Apple Store, покупка аксессуаров',
+    amount: -12990,
+  },
+  {
+    id: '2',
+    type: 'ЖКХ',
+    createdAt: '3 декабря 2025',
+    status: 'Завершено',
+    details: 'Оплата коммунальных услуг за ноябрь',
+    amount: -6540,
+  },
+  {
+    id: '3',
+    type: 'Начисление',
+    createdAt: '1 декабря 2025',
+    status: 'Зачислено',
+    details: 'Зарплата за ноябрь, ООО «ТехСофт»',
+    amount: 145000,
+  },
+  {
+    id: '4',
+    type: 'Оплата картой',
+    createdAt: '28 ноября 2025',
+    status: 'Завершено',
+    details: 'Starbucks, кофе и десерт',
+    amount: -890,
+  },
+  {
+    id: '5',
+    type: 'Начисление',
+    createdAt: '25 ноября 2025',
+    status: 'Зачислено',
+    details: 'Кэшбэк за покупки',
+    amount: 1250,
+  },
+  {
+    id: '6',
+    type: 'ЖКХ',
+    createdAt: '20 ноября 2025',
+    status: 'Завершено',
+    details: 'Электроэнергия и водоснабжение',
+    amount: -4320,
+  },
+  {
+    id: '7',
+    type: 'Оплата картой',
+    createdAt: '18 ноября 2025',
+    status: 'Завершено',
+    details: 'Яндекс Маркет, бытовая техника',
+    amount: -38990,
+  },
+  {
+    id: '8',
+    type: 'Начисление',
+    createdAt: '15 ноября 2025',
+    status: 'Зачислено',
+    details: 'Возврат средств за отменённый заказ',
+    amount: 7990,
+  },
+];

@@ -1,0 +1,41 @@
+.wrapper {
+  display: inline-flex;
+  background-color: var(--colors--neutral--700);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.tab {
+  position: relative;
+  border: none;
+  background: transparent;
+  color: var(--colors--neutral--500);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.label {
+  position: relative;
+  z-index: 2;
+  transition: color 0.2s ease;
+}
+
+.activeLabel {
+  color: var(--colors--neutral--200);
+}
+
+.activeBackground {
+  position: absolute;
+  inset: 0;
+  background-color: var(--colors--neutral--600);
+  border-radius: 10px;
+  z-index: 1;
+}

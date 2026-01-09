@@ -1,95 +1,128 @@
-.skeleton {
-  pointer-events: none;
-
-  td {
-    padding-top: var(--size-16);
-    padding-bottom: var(--size-16);
-
-    & > div {
-      height: var(--size-14);
-      border-radius: var(--size-6);
-      width: 100%;
-    }
-  }
-}
+//.wrapper {
+//  background-color: var(--colors--neutral--800);
+//  border-radius: 100px;
+//}
 
 .table {
   width: 100%;
   table-layout: fixed;
-  margin-bottom: var(--size-20);
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  color: var(--colors--neutral--400);
+  background-color: var(--colors--neutral--700);
+  border-radius: 6px;
+  overflow: hidden;
 
   th,
   td {
-    padding: var(--size-8) var(--size-8) var(--size-8) var(--size-18);
+    padding: 14px 16px;
     vertical-align: middle;
-    background-color: var(--color-white);
-    box-shadow: inset 0 -1px 0 var(--color-grey-easy);
-  }
-
-  tr {
-    height: var(--size-50);
-    background-color: var(--color-white);
-
-    &.clickable {
-      transition: background 0.25s;
-
-      td {
-        transition: background 0.25s;
-      }
-
-      &:hover {
-        background-color: var(--color-grey-easy);
-
-        td {
-          background-color: var(--color-grey-easy);
-        }
-      }
-    }
+    background-color: var(--colors--neutral--600);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   thead {
+    text-align: left;
+    position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 2;
+    background-color: var(--colors--neutral--700);
 
     th {
-      text-align: left;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--colors--neutral--500);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      user-select: none;
+    }
+  }
 
-      &:global(.sortable) {
-        padding-right: var(--size-16);
+  tbody {
+    tr {
+      height: 56px;
+      background-color: var(--colors--neutral--700);
+      transition: background-color, color 0.2s ease;
+      &:hover {
+        color: white;
+        background-color: var(--colors--neutral--600);
 
-        &::after {
-          position: absolute;
-          right: var(--size-2);
-          top: 50%;
-          content: none;
-          display: block;
-          width: 0;
-          height: 0;
-          border-style: solid;
+        td {
+          background-color: var(--colors--neutral--600);
         }
       }
-
-      &:global(.asc) {
-        &::after {
-          content: '';
-          border-width: 0 var(--size-4) var(--size-6) var(--size-4);
-          border-color: transparent transparent var(--color-primary) transparent;
-        }
-      }
-
-      &:global(.desc) {
-        &::after {
-          content: '';
-          border-width: var(--size-6) var(--size-4) 0 var(--size-4);
-          border-color: var(--color-primary) transparent transparent transparent;
-        }
+      &.clickable {
+        cursor: pointer;
       }
     }
   }
 }
 
-.pagination {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: var(--size-40);
+/* Скелетон */
+.skeleton {
+  pointer-events: none;
+
+  td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    & > div {
+      height: 12px;
+      border-radius: 8px;
+      width: 100%;
+      background: linear-gradient(
+                      90deg,
+                      var(--colors--neutral--700),
+                      var(--colors--neutral--600),
+                      var(--colors--neutral--700)
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.4s ease infinite;
+    }
+  }
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Суммы */
+.amountPositive {
+  color: #4ade80; /* мягкий зелёный */
+  font-weight: 500;
+}
+
+.amountNegative {
+  color: #f87171; /* мягкий красный */
+  font-weight: 500;
+}
+
+/* Тип операции */
+.type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--colors--neutral--200);
+  font-weight: 500;
+}
+
+/* Статус */
+.status {
+  font-size: 13px;
+  color: var(--colors--neutral--500);
+}
+
+/* Детали */
+.details {
+  color: var(--colors--neutral--400);
+}
+

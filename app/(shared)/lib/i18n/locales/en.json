@@ -35,5 +35,17 @@
       "done": "Done",
       "sentMoney": "Money has been successfully transferred"
     }
+  },
+  "historyFiat": {
+    "type": "Type",
+    "createdAt": "Date",
+    "status": "Status",
+    "details": "Details",
+    "amount": "Amount",
+    "filters": {
+      "all": "All",
+      "income": "Income",
+      "expenses": "Expenses"
+    }
   }
 }

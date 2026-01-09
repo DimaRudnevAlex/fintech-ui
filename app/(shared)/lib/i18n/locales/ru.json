@@ -35,5 +35,17 @@
       "done": "Готово",
       "sentMoney": "Деньги успешно переведены"
     }
+  },
+  "historyFiat": {
+    "type": "Тип",
+    "createdAt": "Дата",
+    "status": "Статус",
+    "details": "Детали",
+    "amount": "Сумма",
+    "filters": {
+      "all": "Все",
+      "income": "Доходы",
+      "expenses": "Расходы"
+    }
   }
 }

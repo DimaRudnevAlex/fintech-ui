@@ -16,70 +16,75 @@ const Table = <TData,>({
   skeletonRows = 10,
 }: TableProps<TData>): JSX.Element => {
   return (
-    <table className={styles.table}>
-      <thead>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header) => {
-              const { column } = header;
-              const isSortable = column.getCanSort();
-              const sortDirection = column.getIsSorted();
+    <div className={styles.wrapper}>
+      <table className={styles.table}>
+        <thead>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => {
+                const { column } = header;
+                const isSortable = column.getCanSort();
+                const sortDirection = column.getIsSorted();
 
-              return (
-                <th
-                  key={header.id}
-                  style={{
-                    cursor: 'pointer',
-                    ...getCommonPinningStyles(column),
-                  }}
-                  colSpan={header.colSpan}
-                  onClick={header.column.getToggleSortingHandler()}
-                  className={clsx(isSortable && 'sortable', sortDirection)}
-                >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(column.columnDef.header, header.getContext())}
-                </th>
-              );
-            })}
-          </tr>
-        ))}
-      </thead>
-      <tbody>
-        {loading
-          ? Array.from({ length: skeletonRows }).map((_, i) => (
-              <tr className={styles.skeleton} key={i}>
-                {table.getAllColumns().map((column, j) => (
-                  <td
-                    style={{ ...getCommonPinningStyles(column) }}
-                    key={`skeleton-${i}${j}`}
+                return (
+                  <th
+                    key={header.id}
+                    style={{
+                      cursor: 'pointer',
+                      ...getCommonPinningStyles(column),
+                    }}
+                    colSpan={header.colSpan}
+                    onClick={header.column.getToggleSortingHandler()}
+                    className={clsx(isSortable && 'sortable', sortDirection)}
                   >
-                    <Skeleton />
-                  </td>
-                ))}
-              </tr>
-            ))
-          : table.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
-                {row.getVisibleCells().map((cell) => {
-                  const { column } = cell;
-
-                  return (
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          column.columnDef.header,
+                          header.getContext(),
+                        )}
+                  </th>
+                );
+              })}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {loading
+            ? Array.from({ length: skeletonRows }).map((_, i) => (
+                <tr className={styles.skeleton} key={i}>
+                  {table.getAllColumns().map((column, j) => (
                     <td
                       style={{ ...getCommonPinningStyles(column) }}
-                      key={cell.id}
+                      key={`skeleton-${i}${j}`}
                     >
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
+                      <Skeleton />
                     </td>
-                  );
-                })}
-              </tr>
-            ))}
-      </tbody>
-    </table>
+                  ))}
+                </tr>
+              ))
+            : table.getRowModel().rows.map((row) => (
+                <tr key={row.id}>
+                  {row.getVisibleCells().map((cell) => {
+                    const { column } = cell;
+
+                    return (
+                      <td
+                        style={{ ...getCommonPinningStyles(column) }}
+                        key={cell.id}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
