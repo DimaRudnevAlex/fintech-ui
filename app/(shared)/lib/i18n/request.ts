@@ -1,7 +1,10 @@
+import { cookies } from 'next/headers';
 import { getRequestConfig } from 'next-intl/server';
 
 export default getRequestConfig(async () => {
-  const locale = 'ru';
+  const cookieStore = await cookies();
+  const locale = cookieStore.get('locale')?.value || 'ru';
+  console.log('locale', locale);
   const timeZone = 'Europe/Moscow';
 
   return {

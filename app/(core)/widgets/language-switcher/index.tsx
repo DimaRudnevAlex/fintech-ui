@@ -1,5 +1,7 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
 
@@ -9,9 +11,13 @@ import styles from './styles.module.scss';
 
 const LanguageSwitcher: React.FC = () => {
   const { locale, setLocale } = useLocale();
+  const router = useRouter();
 
   const toggleLocale = () => {
-    setLocale(locale === 'en' ? 'ru' : 'en');
+    const newLocale = locale === 'en' ? 'ru' : 'en';
+    document.cookie = `locale=${newLocale}; path=/; max-age=31536000`;
+    setLocale(newLocale);
+    router.refresh();
   };
 
   return (
