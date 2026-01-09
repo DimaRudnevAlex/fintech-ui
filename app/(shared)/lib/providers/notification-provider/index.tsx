@@ -1,4 +1,3 @@
-// components/notifications/NotificationContext.tsx
 'use client';
 
 import { createContext, useCallback, useContext, useState } from 'react';
@@ -7,9 +6,6 @@ import { AnimatePresence } from 'framer-motion';
 
 import { NotificationItem } from '@/(shared)/components/notification';
 import { Notification } from '@/(shared)/components/notification/model/types';
-import { canPlayFeedback } from '@/(shared)/lib/utils/notification/feedback';
-import { haptic } from '@/(shared)/lib/utils/notification/haptic';
-import { playSound } from '@/(shared)/lib/utils/notification/sound';
 
 import styles from './styles.module.scss';
 
@@ -27,13 +23,7 @@ export function NotificationProvider({
   const notify = useCallback((data: Omit<Notification, 'id'>) => {
     const id = Date.now();
 
-    setNotifications((prev) => {
-      if (prev.length === 0 && canPlayFeedback()) {
-        playSound();
-        haptic('light');
-      }
-      return [...prev, { id, ...data }];
-    });
+    setNotifications((prev) => [...prev, { id, ...data }]);
 
     setTimeout(() => {
       setNotifications((prev) => prev.filter((n) => n.id !== id));

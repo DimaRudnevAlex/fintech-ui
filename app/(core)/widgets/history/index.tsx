@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
-import HistoryCrypt from '@/(core)/features/history-transfer/crypt';
+import HistoryCrypto from '@/(core)/features/history-transfer/crypt';
 import HistoryFiat from '@/(core)/features/history-transfer/fiat';
 import HistoryTabs from '@/(core)/features/history-transfer/menu-tab';
 import { TABS } from '@/(core)/features/history-transfer/menu-tab/model/config-tab';
@@ -53,7 +53,7 @@ const HistoryWidget: React.FC = () => {
             exit={{ opacity: 0, x: 10 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
           >
-            <HistoryCrypt data={mockTransactionsCrypto} />
+            <HistoryCrypto data={mockTransactionsCrypto} />
           </motion.div>
         )}
       </AnimatePresence>

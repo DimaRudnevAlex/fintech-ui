@@ -7,9 +7,12 @@ import FilterTab from '@/(shared)/components/filter/filter-tab';
 
 import { FILTER } from './model/config-filter';
 import { Filter, HistoryCryptProps } from './model/types';
+import ExportFileCrypto from './parts/export-file';
 import HistoryCryptoTable from './parts/table';
 
-const HistoryCrypt: React.FC<HistoryCryptProps> = ({ data }) => {
+import styles from './styles.module.scss';
+
+const HistoryCrypto: React.FC<HistoryCryptProps> = ({ data }) => {
   const t = useTranslations('historyFiat.filters');
 
   const [filter, setFilter] = useState<Filter>({
@@ -28,10 +31,13 @@ const HistoryCrypt: React.FC<HistoryCryptProps> = ({ data }) => {
 
   return (
     <>
-      <FilterTab value={filter} onChange={setFilter} items={filterItems} />
+      <div className={styles.wrapper}>
+        <FilterTab value={filter} onChange={setFilter} items={filterItems} />
+        <ExportFileCrypto data={data} />
+      </div>
       <HistoryCryptoTable data={data} globalFilter={filter} />
     </>
   );
 };
 
-export default HistoryCrypt;
+export default HistoryCrypto;

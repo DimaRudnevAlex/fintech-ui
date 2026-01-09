@@ -1,0 +1,68 @@
+.icon-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+  }
+
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .loader-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loader {
+    animation: spin 1s linear infinite;
+  }
+}
+
+.color {
+  &-destructive {
+    background-color: transparent;
+    color: var(--color-red-alarm);
+
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  &-accent {
+    background-color: var(--colors--primary--100);
+    color: var(--colors--neutral--100);
+
+    &:hover:not(:disabled), &:active {
+      background-color: var(--colors--secondary--100);
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
