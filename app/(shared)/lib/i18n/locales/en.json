@@ -50,6 +50,12 @@
       "all": "All",
       "income": "Income",
       "expenses": "Expenses"
+    },
+    "notify": {
+      "success": "Success",
+      "successExportFile": "The file has been successfully uploaded",
+      "error": "Error",
+      "failExportFile": "Couldn't upload file"
     }
   }
 }

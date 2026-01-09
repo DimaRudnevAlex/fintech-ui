@@ -10,13 +10,12 @@ export const fiatExcelConfig: ExcelExportConfig<Data> = {
       name: 'Fiat',
 
       columns: [
-        { header: 'ID', accessor: 'id', width: 10 },
         { header: 'Type', accessor: 'type', width: 15 },
         { header: 'Details', accessor: 'details', width: 30 },
         { header: 'Amount', accessor: 'amount', width: 15 },
         {
           header: 'Created',
-          accessor: (u) => new Date(u.createdAt).toLocaleDateString(),
+          accessor: 'createdAt',
           width: 20,
         },
         { header: 'Status', accessor: 'status', width: 15 },

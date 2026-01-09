@@ -50,6 +50,12 @@
       "all": "Все",
       "income": "Доходы",
       "expenses": "Расходы"
+    },
+    "notify": {
+      "success": "Готово",
+      "successExportFile": "Файл успешно выгружен",
+      "error": "Ошибка",
+      "failExportFile": "Не удалось выгрузить файл"
     }
   }
 }

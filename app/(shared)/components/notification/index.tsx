@@ -1,15 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { CircleAlert, CircleCheck, CircleX } from 'lucide-react';
 
 import { Notification } from '@/(shared)/components/notification/model/types';
 
 import styles from './styles.module.scss';
 
 const icons = {
-  success: '✅',
-  error: '❌',
-  warning: '⚠️',
+  success: <CircleCheck color={'var(--colors--primary--400)'} />,
+  error: <CircleX color={'var(--color-red-alarm)'} />,
+  warning: <CircleAlert color={'var(--colors--primary--300)'} />,
 };
 
 export function NotificationItem({

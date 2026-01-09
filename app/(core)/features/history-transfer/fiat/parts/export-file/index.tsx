@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { FileDown } from 'lucide-react';
 
@@ -15,6 +16,7 @@ const ExportFileFiat: React.FC<ExportFileFiatProps<Data>> = ({
   data,
   disabled,
 }) => {
+  const t = useTranslations('historyFiat.notify');
   const notify = useNotification();
 
   const exportData = useExcelExport({
@@ -22,14 +24,14 @@ const ExportFileFiat: React.FC<ExportFileFiatProps<Data>> = ({
     onSuccess: () =>
       notify({
         type: 'success',
-        description: 'Файл успешно выгружен',
-        title: 'Готово',
+        description: t('successExportFile'),
+        title: t('success'),
       }),
     onError: () =>
       notify({
         type: 'error',
-        description: 'Не удалось выгрузить файл',
-        title: 'Ошибка',
+        description: t('failExportFile'),
+        title: t('error'),
       }),
   });
 
