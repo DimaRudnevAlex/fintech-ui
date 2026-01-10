@@ -25,7 +25,7 @@ const AsideTop: React.FC<AsideTopProps> = ({ extended }) => (
         ease: 'easeOut',
       }}
     >
-      <Heading variant="h1">Fintech</Heading>
+      <Heading variant="h1">Arckat</Heading>
     </motion.div>
   </Link>
 );
