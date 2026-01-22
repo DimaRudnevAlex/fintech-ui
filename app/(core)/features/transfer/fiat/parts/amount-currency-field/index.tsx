@@ -48,8 +48,6 @@ const AmountCurrencyField = withForm({
             )}
           />
 
-          <div className={styles.divider} />
-
           <form.AppField
             name="currency"
             children={(field) => (

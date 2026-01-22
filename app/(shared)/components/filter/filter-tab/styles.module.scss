@@ -1,9 +1,9 @@
 .wrapper {
   display: inline-flex;
-  background-color: var(--colors--neutral--700);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, .05);
+  border-radius: 10px;
   padding: 4px;
-  gap: 4px;
+  gap: 20px;
   position: relative;
 }
 
@@ -12,7 +12,7 @@
   border: none;
   background: transparent;
   color: var(--colors--neutral--500);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   padding: 8px 14px;
   border-radius: 10px;
@@ -28,13 +28,15 @@
 }
 
 .activeLabel {
-  color: var(--colors--neutral--200);
+  color: var(--colors--neutral--100);
 }
 
 .activeBackground {
   position: absolute;
   inset: 0;
-  background-color: var(--colors--neutral--600);
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10px);
   border-radius: 10px;
   z-index: 1;
 }

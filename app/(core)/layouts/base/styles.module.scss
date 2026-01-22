@@ -6,3 +6,16 @@
   min-height: 100vh;
   background: radial-gradient(900px 520px at 18% -10%, rgba(255, 42, 95, .16), transparent 55%), radial-gradient(900px 520px at 90% 20%, rgba(120, 106, 255, .10), transparent 55%), var(--colors-bg)
 }
+
+.wrapper {
+  background: var(--background-content);
+  backdrop-filter: blur(10px);
+  border: var(--border-primary);
+  border-radius: var(--radius-xxl);
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.content {
+  padding: var(--padding-primary);
+}

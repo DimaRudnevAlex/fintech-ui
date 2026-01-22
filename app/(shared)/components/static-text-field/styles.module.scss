@@ -1,31 +1,24 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
+  user-select: none;
   width: 100%;
   margin-bottom: 20px;
+  background: rgba(255, 255, 255, .03);
+  border-radius: 10px;
+  color: var(--color-white);
+  font-size: 16px;
+  padding: 20px 12px;
 }
 
 .label {
   user-select: none;
-  font-size: 13px;
   font-weight: bold;
-  color: var(--colors--neutral--400);
   text-wrap: nowrap;
-  padding-bottom: 10px;
 }
 
-.staticInput {
-  padding: 10px 12px;
-  font-size: 13px;
-  border-radius: 10px;
-  background: var(--colors--neutral--600);
-  border: 1px solid var(--colors--neutral--500);
-  color: var(--colors--neutral--100);
-  width: 100%;
-  min-height: 36px;
-  display: flex;
-  align-items: center;
+.text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-left: 10px;
 }

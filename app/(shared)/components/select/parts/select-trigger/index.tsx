@@ -31,7 +31,7 @@ const SelectTrigger: React.FC<SelectTriggerProps> = ({
           )}
         </div>
         <RadixSelect.Icon className={styles.icon}>
-          <ChevronDown size={16} />
+          <ChevronDown size={20} />
         </RadixSelect.Icon>
       </div>
     </RadixSelect.Trigger>

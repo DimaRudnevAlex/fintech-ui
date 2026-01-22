@@ -47,6 +47,7 @@
 
     /*Background*/
     --background-aside:linear-gradient(180deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, .00));
+    --background-content:  rgba(255, 255, 255, .03);
 
     /*Text*/
     --text-xs: 0.9231rem;
@@ -63,7 +64,9 @@
 
     /*Padding*/
     --padding-primary: 14px;
+    --negative-padding-primary: -14px;
 
     /*Border*/
     --border-primary: 1px solid rgba(255, 255, 255, .06);
+
 }

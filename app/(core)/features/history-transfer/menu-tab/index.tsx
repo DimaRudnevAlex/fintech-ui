@@ -31,7 +31,7 @@ const HistoryTabs: React.FC<HistoryTabsProps> = ({
       <motion.div
         className={styles.indicator}
         layout
-        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 40 }}
         style={{
           width: `${100 / tabs.length}%`,
           left: `${(100 / tabs.length) * activeIndex}%`,
