@@ -5,7 +5,7 @@
 }
 
 body {
-    background: var(--colors--neutral--700);
+    /*background: var(--colors--neutral--700);*/
     color: var(--colors--neutral--100);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

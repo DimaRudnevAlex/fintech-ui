@@ -7,9 +7,11 @@ import styles from './styles.module.scss';
 
 const BaseLayout: React.FC<WithChildren> = ({ children }) => (
   <div className={styles.page}>
-    <Header />
     <SideMenu />
-    <main className={styles.content}>{children}</main>
+    <main className={styles.content}>
+      <Header />
+      {/*{children}*/}
+    </main>
   </div>
 );
 
