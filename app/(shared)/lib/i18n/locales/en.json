@@ -57,5 +57,25 @@
       "error": "Error",
       "failExportFile": "Couldn't upload file"
     }
+  },
+  "profile": {
+    "tabs": {
+      "info": "Information",
+      "safety": "Safety"
+    },
+    "info": {
+      "fullName": "FullName",
+      "phone": "Phone",
+      "email": "Email",
+      "passportData": "Passport data",
+      "registrationAddress": "Registration address"
+    },
+    "safety": {
+      "change": "Change",
+      "passwordChange": "Password change",
+      "passwordChangeText": "Update your password regularly to protect your account",
+      "phoneChange": "Changing the phone number",
+      "phoneChangeText": "The phone is used to log in and confirm transaction"
+    }
   }
 }

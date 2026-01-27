@@ -1,0 +1,38 @@
+.tabs {
+  display: flex;
+  gap: 24px;
+}
+
+.tab {
+  position: relative;
+  padding-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #6b7280;
+  letter-spacing: 0.05rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #374151;
+  }
+}
+
+.active {
+  color: #2563eb;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background-color: #2563eb;
+  border-radius: 2px;
+}
