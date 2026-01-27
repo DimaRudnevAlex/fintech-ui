@@ -1,3 +1,5 @@
+'use client';
+
 import { clsx } from 'clsx';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import { Loader } from 'lucide-react';

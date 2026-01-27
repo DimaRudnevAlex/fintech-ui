@@ -6,19 +6,33 @@
 
   padding: 10px 12px;
   min-width: 200px;
+  height: 50px;
   width: 100%;
+  font-size: 16px;
 
-  background: var(--colors--neutral--600);
-  border: 1px solid var(--colors--neutral--500);
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid rgba(255, 255, 255, .10);
   border-radius: 10px;
 
   color: var(--colors--neutral--400);
   cursor: pointer;
   transition: color, border-color 0.2s ease;
 
+  &::placeholder {
+    color: rgba(255, 255, 255, .50);
+  }
+
   &:hover {
     color: var(--color-white);
-    border-color: var(--colors--neutral--400);
+    border-color: rgba(255, 255, 255, .30);
+
+    &::placeholder {
+      color: var(--color-white);
+    }
+  }
+
+  &:focus {
+    border-color: var(--color-white);
   }
 
   & .right {

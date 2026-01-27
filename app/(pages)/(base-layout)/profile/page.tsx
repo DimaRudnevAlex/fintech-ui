@@ -1,5 +1,7 @@
+import Profile from '@/(core)/widgets/profile';
+
 const Page: React.FC = () => {
-  return <div>Profile</div>;
+  return <Profile />;
 };
 
 export default Page;

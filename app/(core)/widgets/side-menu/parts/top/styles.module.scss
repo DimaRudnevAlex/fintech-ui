@@ -1,21 +1,12 @@
 .top {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: 100%;
-  height: 68px;
-}
-
-.icon {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  padding-left: 18px;
+  gap: 14px;
+  width: 100%;
+  padding: var(--padding-primary) 0;
 }
-
 
 .title {
-  display: flex;
-  align-items: center;
+  letter-spacing: 0.06rem;
 }
-

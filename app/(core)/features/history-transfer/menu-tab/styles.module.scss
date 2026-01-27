@@ -1,7 +1,7 @@
 .tabs {
   position: relative;
   display: flex;
-  background-color: var(--colors--neutral--600);
+  background: rgba(255, 255, 255, .05);
   border-radius: 10px;
   padding: 4px;
   margin-bottom: 16px;
@@ -13,7 +13,7 @@
   border: none;
   background: transparent;
   color: var(--colors--neutral--500);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   padding: 10px 0;
   border-radius: 10px;
@@ -22,12 +22,12 @@
   transition: color 0.2s ease;
 }
 
-.tabs button:hover {
-  color: var(--colors--neutral--300);
+.tabs button:hover:not(.active) {
+  color: var(--colors--neutral--400);
 }
 
 .tabs .active {
-  color: var(--colors--neutral--200);
+  color: var(--colors--neutral--100);
 }
 
 .indicator {
@@ -35,6 +35,8 @@
   top: 0;
   bottom: 0;
   width: 50%;
-  background-color: var(--colors--primary--100);
+  background-color: rgba(255, 255, 255, .01);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10px);
   border-radius: 10px;
 }

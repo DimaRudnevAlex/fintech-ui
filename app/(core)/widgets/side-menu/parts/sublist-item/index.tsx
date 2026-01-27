@@ -10,7 +10,7 @@ import { SublistItemProps } from './model/types';
 
 import styles from './styles.module.scss';
 
-const SublistItem: React.FC<SublistItemProps> = ({ label, href, extended }) => {
+const SublistItem: React.FC<SublistItemProps> = ({ label, href }) => {
   const pathname = usePathname();
   const isActive = pathname === href;
 
@@ -18,15 +18,6 @@ const SublistItem: React.FC<SublistItemProps> = ({ label, href, extended }) => {
     <motion.li
       layout="position"
       className={clsx(styles.item, isActive && styles.active)}
-      initial={false}
-      animate={{
-        opacity: extended ? 1 : 0,
-        x: extended ? 0 : -4,
-      }}
-      transition={{
-        duration: extended ? 0.15 : 0.05,
-        ease: 'easeOut',
-      }}
     >
       {isActive && (
         <motion.span

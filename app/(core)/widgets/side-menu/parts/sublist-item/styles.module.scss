@@ -3,13 +3,15 @@
   align-items: center;
   position: relative;
   color: var(--colors--neutral--400);
-  min-height: 40px;
+  min-height: 50px;
   padding-left: 62px;
   font-weight: 500;
   transition: color 0.2s ease;
+  font-size: 14px;
 
   &:hover {
     color: var(--color-white);
+    cursor: pointer;
   }
 }
 
