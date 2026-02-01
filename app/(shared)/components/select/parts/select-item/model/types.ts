@@ -1,3 +1,4 @@
-import { SelectProps } from '../../../model/types';
+import { SelectOption, SelectProps } from '../../../model/types';
 
-export type SelectItemsProps = Pick<SelectProps, 'options'>;
+export type SelectItemsProps<TOption extends SelectOption = SelectOption> =
+  Pick<SelectProps<TOption>, 'options' | 'renderOption'>;

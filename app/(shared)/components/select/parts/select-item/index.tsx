@@ -1,11 +1,16 @@
 import * as RadixSelect from '@radix-ui/react-select';
 import { Check } from 'lucide-react';
 
+import { SelectOption } from '../../model/types';
+
 import { SelectItemsProps } from './model/types';
 
 import styles from './styles.module.scss';
 
-const SelectItems: React.FC<SelectItemsProps> = ({ options }) => {
+const SelectItems = <TOption extends SelectOption>({
+  options,
+  renderOption,
+}: SelectItemsProps<TOption>) => {
   return (
     <>
       {options.map((option) => (
@@ -14,7 +19,9 @@ const SelectItems: React.FC<SelectItemsProps> = ({ options }) => {
           value={option.value}
           className={styles.item}
         >
-          <RadixSelect.ItemText>{option.label}</RadixSelect.ItemText>
+          <RadixSelect.ItemText asChild>
+            <div>{renderOption ? renderOption(option) : option.label}</div>
+          </RadixSelect.ItemText>
 
           <RadixSelect.ItemIndicator className={styles.indicator}>
             <Check size={14} />

@@ -30,7 +30,7 @@
 .indicator {
   position: absolute;
   left: 10px;
-
+  top: 30%;
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.15s ease, transform 0.15s ease;

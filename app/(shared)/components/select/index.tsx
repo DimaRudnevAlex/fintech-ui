@@ -25,6 +25,8 @@ const Select = <TOption extends SelectOption>({
   className,
   errors = [],
   onBlur,
+  renderOption,
+  renderValue,
 }: SelectProps<TOption>) => {
   const id = useId();
 
@@ -38,9 +40,11 @@ const Select = <TOption extends SelectOption>({
           placeholder={placeholder}
           id={id}
           hasError={errors.length > 0}
+          renderValue={renderValue}
+          value={value}
         />
         <SelectContent options={options}>
-          <SelectItems options={options} />
+          <SelectItems options={options} renderOption={renderOption} />
         </SelectContent>
       </SelectRoot>
 

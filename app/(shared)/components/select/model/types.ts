@@ -5,7 +5,7 @@ export type SelectOption<TMeta = unknown> = {
 };
 
 export type SelectProps<TOption extends SelectOption = SelectOption> = {
-  value?: TOption;
+  value: TOption;
   placeholder?: string;
   onChange: (option: TOption) => void;
   onBlur?: () => void;
@@ -14,4 +14,6 @@ export type SelectProps<TOption extends SelectOption = SelectOption> = {
   label?: string;
   className?: string;
   errors?: string[];
+  renderOption?: (option: TOption) => React.ReactNode;
+  renderValue?: (option: TOption) => React.ReactNode;
 };

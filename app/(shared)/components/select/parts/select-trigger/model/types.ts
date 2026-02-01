@@ -1,6 +1,11 @@
-import { SelectProps } from '../../../model/types';
+import { SelectOption, SelectProps } from '../../../model/types';
 
-export type SelectTriggerProps = Pick<
-  SelectProps,
-  'placeholder' | 'isLoading' | 'onBlur'
-> & { id: string; hasError?: boolean };
+export type SelectTriggerProps<TOption extends SelectOption = SelectOption> =
+  Pick<
+    SelectProps<TOption>,
+    'placeholder' | 'isLoading' | 'onBlur' | 'value'
+  > & {
+    id: string;
+    hasError?: boolean;
+    renderValue?: (option: TOption) => React.ReactNode;
+  };
