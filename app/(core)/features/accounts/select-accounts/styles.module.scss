@@ -1,0 +1,10 @@
+.option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected {
+  display: flex;
+  gap: 6px;
+  font-weight: 600;
+}
