@@ -4,4 +4,5 @@ export const ROUTES = {
   TRANSFER_FIAT: '/transfer-fiat',
   TRANSFER_CRYPT: '/transfer-crypt',
   HISTORY: '/history',
+  CHAT: '/chat',
 } as const;

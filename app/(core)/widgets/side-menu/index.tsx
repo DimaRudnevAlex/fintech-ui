@@ -2,7 +2,12 @@
 
 import { useTranslations } from 'next-intl';
 
-import { HandCoins, User, WalletCards } from 'lucide-react';
+import {
+  HandCoins,
+  MessageCircleQuestionMark,
+  User,
+  WalletCards,
+} from 'lucide-react';
 
 import Line from '@/(shared)/components/visual/line';
 import { ROUTES } from '@/(shared)/constants/routes';
@@ -53,6 +58,11 @@ const SideMenu: React.FC = () => {
             href={ROUTES.ACCOUNTS}
           />
         </AsideNestedItem>
+        <AsideSingleItem
+          label={t(HEADER_TITLES[ROUTES.CHAT])}
+          href={ROUTES.CHAT}
+          Icon={<MessageCircleQuestionMark />}
+        />
       </ul>
 
       <div className={styles.languageWrapper}>

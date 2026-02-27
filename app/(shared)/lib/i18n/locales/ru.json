@@ -4,7 +4,8 @@
     "transferFiat": "Перевод фиат денег",
     "transferCrypt": "Перевод крипты",
     "accounts": "Счета",
-    "history": "История переводов"
+    "history": "История переводов",
+    "chat": "Чат"
   },
   "sideBar": {
     "profile": "Профиль",
@@ -12,7 +13,8 @@
     "transferFiat": "Перевод фиат денег",
     "transferCrypt": "Перевод крипты",
     "accounts": "Счета",
-    "history": "История"
+    "history": "История",
+    "chat": "Чат"
   },
   "transferFiat": {
     "form": {

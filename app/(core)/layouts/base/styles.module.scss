@@ -8,13 +8,15 @@
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   background: var(--background-content);
   border: var(--border-primary);
   border-radius: var(--radius-xxl);
   font-weight: 600;
-  overflow: hidden;
 }
 
 .content {
+  flex: 1;
   padding: var(--padding-primary);
 }
