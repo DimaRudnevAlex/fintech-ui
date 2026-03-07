@@ -49,6 +49,9 @@
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.2.10",
     "@radix-ui/react-select": "^2.2.6",
+    "@tanstack/ai": "^0.6.1",
+    "@tanstack/ai-openai": "^0.6.0",
+    "@tanstack/ai-react": "^0.6.1",
     "@tanstack/react-form": "^1.27.7",
     "@tanstack/react-table": "^8.21.3",
     "clsx": "^2.1.1",
