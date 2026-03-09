@@ -5,4 +5,6 @@ export const ROUTES = {
   TRANSFER_CRYPT: '/transfer-crypt',
   HISTORY: '/history',
   CHAT: '/chat',
+  LOGIN: '/login',
+  REGISTER: '/register',
 } as const;

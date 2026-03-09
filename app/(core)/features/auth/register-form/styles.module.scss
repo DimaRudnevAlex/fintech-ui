@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.content {
+  width: 500px;
+  padding: 20px;
+  background: var(--background-aside);
+  backdrop-filter: blur(10px);
+  border: var(--border-primary);
+  border-radius: var(--radius-xxl);
+}
+
+.title {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.submit {
+  margin-top: 30px;
+  width: 100%;
+}
