@@ -6,8 +6,8 @@ export const schema = z
     firstName: z.string().nonempty({ message: 'Обязательное поле' }),
     middleName: z.string().nonempty({ message: 'Обязательное поле' }),
     lastName: z.string().nonempty({ message: 'Обязательное поле' }),
-    password: z.string().min(6, { message: 'Минимум 6 символов' }),
-    confirmPassword: z.string().min(6, { message: 'Минимум 6 символов' }),
+    password: z.string().min(8, { message: 'Минимум 8 символов' }),
+    confirmPassword: z.string().min(8, { message: 'Минимум 8 символов' }),
   })
   .superRefine((data, ctx) => {
     if (
@@ -23,3 +23,5 @@ export const schema = z
       });
     }
   });
+
+export type FormValues = z.infer<typeof schema>;

@@ -1,7 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-
 import { motion, Variants } from 'framer-motion';
 
 import { BaseButton } from '@/(shared)/components/button';
@@ -11,6 +9,7 @@ import { useAppForm } from '@/(shared)/hooks/form';
 
 import AuthLogo from '@/(core)/features/auth/auth-logo';
 import AuthLink from '@/(core)/features/auth/link';
+import { useRegisterMutation } from '@/(core)/features/auth/register-form/hooks/use-register-mutation';
 
 import { defaultValues } from './model/constants';
 import { schema } from './model/schema';
@@ -40,12 +39,15 @@ const item: Variants = {
 };
 
 const RegisterForm: React.FC = () => {
-  const router = useRouter();
-
+  const { mutate, isPending } = useRegisterMutation();
   const form = useAppForm({
     defaultValues: defaultValues,
-    onSubmit: () => {
-      router.push(ROUTES.TRANSFER_FIAT);
+    onSubmit: ({ value }) => {
+      mutate({
+        username: value.email,
+        password: value.password,
+        email: value.email,
+      });
     },
     validators: {
       onSubmit: schema,
@@ -137,6 +139,7 @@ const RegisterForm: React.FC = () => {
         <BaseButton
           size="lg"
           className={styles.submit}
+          isLoading={isPending}
           onClick={() => {
             form.validate('submit');
             form.handleSubmit();

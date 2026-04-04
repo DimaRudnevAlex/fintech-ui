@@ -5,6 +5,7 @@ import { getLocale, getTimeZone } from 'next-intl/server';
 import { ConfirmationProvider } from '@/(shared)/lib/providers/confirmation-provider';
 import { LocaleProvider } from '@/(shared)/lib/providers/locale-provider';
 import { NotificationProvider } from '@/(shared)/lib/providers/notification-provider';
+import QueryProvider from '@/(shared)/lib/providers/query-client';
 import { Locale } from '@/(shared)/types/general';
 
 import '@/(shared)/styles/globals.css';
@@ -28,14 +29,16 @@ const RootLayout = async ({
   return (
     <html lang={locale} className={montserrat.variable}>
       <body>
-        <LocaleProvider
-          localeServer={locale as Locale}
-          timeZoneServer={timeZone}
-        >
-          <ConfirmationProvider>
-            <NotificationProvider>{children}</NotificationProvider>
-          </ConfirmationProvider>
-        </LocaleProvider>
+        <QueryProvider>
+          <LocaleProvider
+            localeServer={locale as Locale}
+            timeZoneServer={timeZone}
+          >
+            <ConfirmationProvider>
+              <NotificationProvider>{children}</NotificationProvider>
+            </ConfirmationProvider>
+          </LocaleProvider>
+        </QueryProvider>
       </body>
     </html>
   );

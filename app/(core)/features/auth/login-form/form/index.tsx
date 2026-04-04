@@ -1,26 +1,28 @@
 'use client';
 
 import { use, useImperativeHandle } from 'react';
-import { useRouter } from 'next/navigation';
 
 import Heading from '@/(shared)/components/typography/heading';
-import { ROUTES } from '@/(shared)/constants/routes';
 import { useAppForm } from '@/(shared)/hooks/form';
 
 import { schema } from '@/(core)/features/auth/login-form/form/model/schema';
+import { useLoginMutation } from '@/(core)/features/auth/login-form/hooks/use-login-mutation';
 
 import { FormContext } from '../hooks/form-context';
 
 import styles from './styles.module.scss';
 
 const Form: React.FC = () => {
-  const router = useRouter();
+  const { mutate } = useLoginMutation();
   const methodsRef = use(FormContext);
 
   const form = useAppForm({
     defaultValues: { login: '', password: '' },
-    onSubmit: () => {
-      router.push(ROUTES.TRANSFER_FIAT);
+    onSubmit: ({ value }) => {
+      mutate({
+        username: value.login,
+        password: value.password,
+      });
     },
     validators: {
       onSubmit: schema,

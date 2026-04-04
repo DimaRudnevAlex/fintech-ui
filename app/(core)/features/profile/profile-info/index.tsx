@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+
+import axiosInstance from '@/(shared)/api/request-base/axios-instance';
 
 import InfoRow from './parts/info-row';
 
@@ -6,6 +9,20 @@ import styles from './styles.module.scss';
 
 const ProfileInfo = () => {
   const t = useTranslations('profile.info');
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await axiosInstance.get('account/me', {
+          baseURL: 'api/',
+        });
+        console.log(res.data);
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  }, []);
+
   return (
     <div className={styles.wrapper}>
       <InfoRow label={t('fullName')} value={'Вася Пупкин'} />
