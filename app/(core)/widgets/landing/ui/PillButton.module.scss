@@ -1,0 +1,41 @@
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.primary {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 8px 24px rgb(91 111 214 / 0.35);
+
+  &:hover {
+    background: var(--primary-hover);
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgb(255 255 255 / 0.45);
+
+  &:hover {
+    background: rgb(255 255 255 / 0.08);
+  }
+}

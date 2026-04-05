@@ -1,0 +1,117 @@
+.section {
+  padding: 0 var(--section-pad) clamp(2.5rem, 5vw, 4rem);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy-deep);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.panel {
+  background: linear-gradient(180deg, var(--sky-soft) 0%, var(--lavender) 100%);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border: 1px solid rgb(91 111 214 / 0.12);
+  box-shadow: 0 16px 48px rgb(15 23 42 / 0.06);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--navy);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.select {
+  min-width: 100px;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: var(--white);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: var(--white);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+
+  &:read-only {
+    color: var(--text-muted);
+  }
+}
+
+.meta {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+}
+
+.metaIcon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.cta {
+  align-self: center;
+  margin-top: 0.25rem;
+  min-width: 220px;
+}

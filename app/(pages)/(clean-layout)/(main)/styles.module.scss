@@ -1,8 +1,11 @@
 .page {
+  padding: 20px;
   min-height: 100vh;
+  background-color: var(--white);
+}
+
+.actions {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: end;
   gap: 20px;
-  background: radial-gradient(900px 520px at 18% -10%, rgba(255, 42, 95, .16), transparent 55%), radial-gradient(900px 520px at 90% 20%, rgba(120, 106, 255, .10), transparent 55%), var(--colors-bg)
 }

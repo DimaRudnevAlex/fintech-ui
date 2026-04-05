@@ -69,4 +69,34 @@
     /*Border*/
     --border-primary: 1px solid rgba(255, 255, 255, .06);
 
+    --white: #ffffff;
+    --black: #0a0a0f;
+    --text: #111827;
+    --text-muted: #5b6472;
+    --text-soft: #6b7280;
+
+    --navy: #0a1628;
+    --navy-deep: #050d18;
+    --sky-soft: #e8f0ff;
+    --sky-mid: #d4e4ff;
+    --lavender: #f0f2fb;
+    --lavender-deep: #e4e8f5;
+
+    --primary: #5b6fd6;
+    --primary-hover: #4a5ec4;
+    --primary-light: #7b8ef0;
+
+    --glass: rgb(255 255 255 / 0.72);
+    --glass-border: rgb(255 255 255 / 0.55);
+
+    --border-light: #e5e7eb;
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+
+    --max-width: 1140px;
+    --section-pad: clamp(1.25rem, 4vw, 2.5rem);
+
 }

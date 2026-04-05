@@ -5,7 +5,7 @@ import { WithChildren } from '@/(shared)/types/general';
 import styles from './styles.module.scss';
 
 export const metadata: Metadata = {
-  title: 'Авторизация',
+  title: 'Arckat',
 };
 
 const Layout: React.FC<WithChildren> = ({ children }) => (

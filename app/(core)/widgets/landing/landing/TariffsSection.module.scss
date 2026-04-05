@@ -1,0 +1,93 @@
+
+.section {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--section-pad);
+  background: var(--lavender);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.heading {
+  margin: 0 0 2rem;
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: linear-gradient(180deg, var(--sky-soft) 0%, var(--white) 55%);
+  border: 1px solid rgb(91 111 214 / 0.12);
+  box-shadow: 0 18px 40px rgb(15 23 42 / 0.08);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.planName {
+  margin: 0 0 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.price {
+  margin: 1.5rem 0 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--black);
+}
+
+.cta {
+  width: 100%;
+  box-sizing: border-box;
+}
