@@ -3,9 +3,7 @@ import { z } from 'zod';
 export const schema = z
   .object({
     email: z.string().nonempty({ message: 'Обязательное поле' }),
-    firstName: z.string().nonempty({ message: 'Обязательное поле' }),
-    middleName: z.string().nonempty({ message: 'Обязательное поле' }),
-    lastName: z.string().nonempty({ message: 'Обязательное поле' }),
+    username: z.string().nonempty({ message: 'Обязательное поле' }),
     password: z.string().min(8, { message: 'Минимум 8 символов' }),
     confirmPassword: z.string().min(8, { message: 'Минимум 8 символов' }),
   })

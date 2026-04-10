@@ -12,6 +12,7 @@ const Logo: React.FC<LogoProps> = ({ width, height, className }) => {
       <Image
         src={'/assets/header-logo.svg'}
         alt="logo"
+        loading="eager"
         width={width ? width : 32}
         height={height ? height : 40}
       />

@@ -8,6 +8,8 @@ import { NotificationProvider } from '@/(shared)/lib/providers/notification-prov
 import QueryProvider from '@/(shared)/lib/providers/query-client';
 import { Locale } from '@/(shared)/types/general';
 
+import { AuthStoreProvider } from '@/(entities)/auth/model/provider';
+
 import '@/(shared)/styles/globals.css';
 import '@/(shared)/styles/variables.css';
 
@@ -35,7 +37,9 @@ const RootLayout = async ({
             timeZoneServer={timeZone}
           >
             <ConfirmationProvider>
-              <NotificationProvider>{children}</NotificationProvider>
+              <NotificationProvider>
+                <AuthStoreProvider>{children}</AuthStoreProvider>
+              </NotificationProvider>
             </ConfirmationProvider>
           </LocaleProvider>
         </QueryProvider>

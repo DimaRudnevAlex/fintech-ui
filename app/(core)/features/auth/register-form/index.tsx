@@ -44,7 +44,7 @@ const RegisterForm: React.FC = () => {
     defaultValues: defaultValues,
     onSubmit: ({ value }) => {
       mutate({
-        username: value.email,
+        username: value.username,
         password: value.password,
         email: value.email,
       });
@@ -68,44 +68,21 @@ const RegisterForm: React.FC = () => {
         </Heading>
         <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
           <form.AppField
-            name="firstName"
-            children={(field) => (
-              <field.TextField
-                label={'Имя'}
-                placeholder={'Имя'}
-                autoComplete="off"
-              />
-            )}
-          />
-
-          <form.AppField
-            name="middleName"
-            children={(field) => (
-              <field.TextField
-                label={'Отчество'}
-                placeholder={'Отчество'}
-                autoComplete="off"
-              />
-            )}
-          />
-
-          <form.AppField
-            name="lastName"
-            children={(field) => (
-              <field.TextField
-                label={'Фамилия'}
-                placeholder={'Фамилия'}
-                autoComplete="off"
-              />
-            )}
-          />
-
-          <form.AppField
             name="email"
             children={(field) => (
               <field.TextField
                 label={'Почта'}
                 placeholder={'Почта'}
+                autoComplete="off"
+              />
+            )}
+          />
+          <form.AppField
+            name="username"
+            children={(field) => (
+              <field.TextField
+                label={'Логин'}
+                placeholder={'Логин'}
                 autoComplete="off"
               />
             )}
