@@ -1,13 +1,16 @@
 import { useStore } from '@tanstack/react-form';
 
-import Select from '@/(shared)/components/select';
-import { SelectOption } from '@/(shared)/components/select/model/types';
+import { DateTimePicker } from '@/(shared)/components/datepicker';
 import { useFieldContext } from '@/(shared)/hooks/form/form-context';
 
-import { ConnectedSelectProps } from './model/types';
+import { ConnectedDateTimePickerProps } from './model/types';
 
-const ConnectedSelect: React.FC<ConnectedSelectProps> = (props) => {
-  const field = useFieldContext<SelectOption>();
+const ConnectedDatePicker: React.FC<ConnectedDateTimePickerProps> = ({
+  mode,
+  label,
+  ...props
+}) => {
+  const field = useFieldContext<Date | null>();
   const errors = useStore(field.store, (state) => {
     return state.meta.errors
       .map((error) => {
@@ -20,14 +23,16 @@ const ConnectedSelect: React.FC<ConnectedSelectProps> = (props) => {
       .filter(Boolean);
   });
   return (
-    <Select
+    <DateTimePicker
+      label={label}
+      mode={mode ?? 'single'}
       value={field.state.value}
       onChange={field.handleChange}
       errors={errors}
-      onBlur={field.handleBlur}
+      selected={undefined}
       {...props}
     />
   );
 };
 
-export default ConnectedSelect;
+export default ConnectedDatePicker;

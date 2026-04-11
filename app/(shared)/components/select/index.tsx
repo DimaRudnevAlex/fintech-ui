@@ -29,7 +29,6 @@ const Select = <TOption extends SelectOption>({
   renderValue,
 }: SelectProps<TOption>) => {
   const id = useId();
-
   return (
     <div className={clsx(styles.wrapper, className)}>
       <SelectLabel id={id} label={label} />

@@ -5,9 +5,12 @@ import { useTranslations } from 'next-intl';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+import CreateUser from '@/(core)/features/profile/create-user';
 import ProfileInfo from '@/(core)/features/profile/profile-info';
 import ProfileSafety from '@/(core)/features/profile/profile-safety';
 import Tabs from '@/(core)/features/tabs';
+
+import { useAuthStore } from '@/(entities)/auth/model/provider';
 
 import styles from './styles.module.scss';
 
@@ -25,12 +28,15 @@ const contentVariants = {
 const Profile: React.FC = () => {
   const t = useTranslations('profile.tabs');
   const [activeTab, setActiveTab] = useState('info');
-
+  const isProfileComplete = useAuthStore((state) => state.isProfileComplete);
+  const userData = useAuthStore((state) => state.userData);
   const tabs = useMemo(
     () => MOCK_TABS.map((tab) => ({ ...tab, label: t(tab.label) })),
     [t],
   );
-
+  if (isProfileComplete || !userData) {
+    return <CreateUser />;
+  }
   return (
     <>
       <Tabs
@@ -51,7 +57,7 @@ const Profile: React.FC = () => {
               exit="exit"
               transition={{ duration: 0.25, ease: 'easeOut' }}
             >
-              <ProfileInfo />
+              <ProfileInfo {...userData} />
             </motion.div>
           )}
 

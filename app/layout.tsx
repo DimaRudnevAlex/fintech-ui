@@ -30,7 +30,12 @@ const RootLayout = async ({
 
   return (
     <html lang={locale} className={montserrat.variable}>
-      <body>
+      <body
+        style={{
+          background:
+            'radial-gradient(900px 520px at 18% -10%, rgba(255, 42, 95, .16), transparent 55%), radial-gradient(900px 520px at 90% 20%, rgba(120, 106, 255, .10), transparent 55%), var(--colors-bg)',
+        }}
+      >
         <QueryProvider>
           <LocaleProvider
             localeServer={locale as Locale}

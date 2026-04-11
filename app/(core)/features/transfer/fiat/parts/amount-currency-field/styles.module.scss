@@ -1,9 +1,14 @@
 .content {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 20px;
 }
+
 .amount {
+  flex: 4;
+}
+
+.content > :not(.amount) {
   flex: 1;
 }
 

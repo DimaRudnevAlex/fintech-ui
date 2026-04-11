@@ -28,7 +28,12 @@ export const createAuthStore: () => StoreApi<AuthStore> = () => {
     },
 
     setUserData: (data) => {
-      set({ userData: data, isAuthenticated: true, isBootstrapped: true });
+      set({
+        userData: data,
+        isAuthenticated: true,
+        isBootstrapped: true,
+        isProfileComplete: false,
+      });
     },
 
     setProfileComplete: (data) =>

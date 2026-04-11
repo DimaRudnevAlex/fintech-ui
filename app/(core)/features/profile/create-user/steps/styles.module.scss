@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 600px;
+
+  .title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
