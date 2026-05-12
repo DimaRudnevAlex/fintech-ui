@@ -1,4 +1,5 @@
 .section {
+  background-color: #222222;
   padding: 0 var(--section-pad) clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -14,17 +15,17 @@
 
 .title {
   margin: 0 0 0.5rem;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--navy-deep);
+  color: var(--white);
 }
 
 .subtitle {
   margin: 0;
-  font-size: 1rem;
-  color: var(--text-muted);
+  font-size: 1.2rem;
+  color: var(--white);
 }
 
 .panel {

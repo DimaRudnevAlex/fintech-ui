@@ -21,7 +21,7 @@ export function HeroArckat() {
           <div className={styles.right}>
             <div className={styles.imageWrap}>
               <Image
-                src="/assets/hero.png"
+                src="/assets/herov2.png"
                 alt="Клиент с смартфоном"
                 fill
                 className={styles.image}
@@ -36,7 +36,7 @@ export function HeroArckat() {
                   className={styles.cardLink}
                   aria-label="Подробнее"
                 >
-                  <ArrowUpRight size={18} strokeWidth={2} />
+                  <ArrowUpRight size={28} strokeWidth={2} />
                 </a>
                 <h2 className={styles.cardTitle}>
                   Фиат и крипто — единый поток средств
@@ -52,7 +52,7 @@ export function HeroArckat() {
                   className={styles.cardLink}
                   aria-label="Подробнее"
                 >
-                  <ArrowUpRight size={18} strokeWidth={2} />
+                  <ArrowUpRight size={28} strokeWidth={2} />
                 </a>
                 <h2 className={styles.cardTitle}>
                   Ваш цифровой помощник без выходных

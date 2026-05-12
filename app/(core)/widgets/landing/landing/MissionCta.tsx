@@ -12,7 +12,7 @@ export function MissionCta() {
             без границ — с уровнем внимания, который раньше был доступен только
             избранным.
           </h2>
-          <PillButton>Присоединиться</PillButton>
+          <PillButton className={styles.btn}>Присоединиться</PillButton>
         </div>
       </div>
     </section>

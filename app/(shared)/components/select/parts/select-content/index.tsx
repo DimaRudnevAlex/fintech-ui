@@ -12,11 +12,13 @@ const SelectContent: React.FC<SelectContentProps> = ({ children, options }) => {
       <RadixSelect.Content position="popper" asChild>
         <div className={styles.content}>
           <RadixSelect.Viewport className={styles.viewport}>
-            {isEmpty ? (
-              <div className={styles.empty}>Ничего не найдено</div>
-            ) : (
-              children
-            )}
+            <div className={styles.scrollWrapper}>
+              {isEmpty ? (
+                <div className={styles.empty}>Ничего не найдено</div>
+              ) : (
+                children
+              )}
+            </div>
           </RadixSelect.Viewport>
         </div>
       </RadixSelect.Content>

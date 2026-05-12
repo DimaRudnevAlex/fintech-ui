@@ -1,7 +1,7 @@
 
 .section {
   padding: clamp(2.5rem, 5vw, 4rem) var(--section-pad);
-  background: var(--lavender);
+  background: var(--white);
 }
 
 .inner {
@@ -12,7 +12,7 @@
 .heading {
   margin: 0 0 2rem;
   text-align: center;
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -33,7 +33,7 @@
 .card {
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.5rem 1.5rem;
-  background: linear-gradient(180deg, var(--sky-soft) 0%, var(--white) 55%);
+  background: linear-gradient(117.16deg, #8C1240 38.36%, #222222 109.15%);
   border: 1px solid rgb(91 111 214 / 0.12);
   box-shadow: 0 18px 40px rgb(15 23 42 / 0.08);
   display: flex;
@@ -45,7 +45,7 @@
   margin: 0 0 1.25rem;
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--black);
+  color: var(--white);
 }
 
 .list {
@@ -60,10 +60,10 @@
 
 .item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.6rem;
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--white);
   line-height: 1.4;
 }
 
@@ -81,10 +81,12 @@
 }
 
 .price {
+  display: flex;
+  justify-content: center;
   margin: 1.5rem 0 1.25rem;
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--black);
+  color: var(--white);
 }
 
 .cta {

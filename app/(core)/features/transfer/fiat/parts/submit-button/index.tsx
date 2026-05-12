@@ -19,7 +19,10 @@ const SubmitButton = withForm({
         <BaseButton
           iconLeft={<ArrowLeftRight />}
           size="lg"
-          onClick={() => form.handleSubmit()}
+          onClick={() => {
+            form.validate('submit');
+            form.handleSubmit();
+          }}
         >
           {t('translate')}
         </BaseButton>

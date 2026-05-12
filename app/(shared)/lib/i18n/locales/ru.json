@@ -2,6 +2,7 @@
   "titlePage": {
     "profile": "Профиль",
     "transferFiat": "Перевод фиат денег",
+    "createTransferFiat": "Создание фиат счета",
     "transferCrypt": "Перевод крипты",
     "accounts": "Счета",
     "history": "История переводов",
@@ -11,6 +12,7 @@
     "profile": "Профиль",
     "transfers": "Переводы",
     "transferFiat": "Перевод фиат денег",
+    "createTransferFiat": "Создание фиат счета",
     "transferCrypt": "Перевод крипты",
     "accounts": "Счета",
     "history": "История",

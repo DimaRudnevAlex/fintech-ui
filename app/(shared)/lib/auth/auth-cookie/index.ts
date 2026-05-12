@@ -1,5 +1,4 @@
 import { CookieOptions } from '@/(shared)/lib/auth/auth-cookie/model/types';
-// eslint-disable-next-line import/no-unresolved
 import { JwtService } from '@/(shared)/lib/jwt';
 
 class AuthCookieService {

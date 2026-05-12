@@ -1,5 +1,6 @@
 
 .section {
+  background-color:#222222;
   padding: 0 var(--section-pad) clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -12,7 +13,7 @@
   border-radius: var(--radius-lg);
   padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
   text-align: center;
-  background: linear-gradient(135deg, var(--sky-mid) 0%, var(--sky-soft) 45%, #f5f7ff 100%);
+  background: linear-gradient(104.33deg, #222222 -4.53%, #8C1240 39.11%, #8C1240 68.15%, #222222 107.37%);
   border: 1px solid rgb(91 111 214 / 0.15);
   box-shadow: 0 20px 50px rgb(15 23 42 / 0.08);
   display: flex;
@@ -27,6 +28,11 @@
   font-size: clamp(1.15rem, 2.5vw, 1.65rem);
   font-weight: 700;
   line-height: 1.35;
-  color: var(--navy-deep);
+  color: white;
   letter-spacing: -0.02em;
+}
+
+.btn {
+  background-color: var(--white);
+  color: #222222;
 }

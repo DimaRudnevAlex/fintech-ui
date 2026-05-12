@@ -19,7 +19,7 @@ export const axiosRequest = async <
   paramsSerializer,
 }: ApiParams<TRequestData>): Promise<TResponseData> => {
   const config: AxiosRequestConfig = {
-    baseURL: 'api/',
+    baseURL: '/api/',
     data,
     method,
     url,

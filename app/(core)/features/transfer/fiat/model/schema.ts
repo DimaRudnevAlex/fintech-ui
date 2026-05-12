@@ -13,6 +13,7 @@ export const transferSchema = (t: ReturnType<typeof useTranslations>) => {
           value: z.string(),
           meta: z.object({
             total: z.number().nonnegative(),
+            type: z.string(),
           }),
         })
         .nullable(),

@@ -9,6 +9,12 @@ export function BannerCta() {
     <section className={styles.section} aria-labelledby="banner-title">
       <div className={styles.inner}>
         <div className={styles.banner}>
+          <Image
+            src="/assets/women.png"
+            alt="Довольный клиент ARCKAT"
+            fill
+            className={styles.image}
+          />
           <div className={styles.content}>
             <h2 id="banner-title" className={styles.title}>
               Пока вы используете несколько сервисов — вы теряете время и деньги
@@ -18,15 +24,6 @@ export function BannerCta() {
               результат.
             </p>
             <PillButton>Начать сейчас</PillButton>
-          </div>
-          <div className={styles.visual}>
-            <Image
-              src="/assets/women.png"
-              alt="Довольный клиент ARCKAT"
-              width={420}
-              height={520}
-              className={styles.image}
-            />
           </div>
         </div>
       </div>

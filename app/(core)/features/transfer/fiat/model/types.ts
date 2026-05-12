@@ -13,4 +13,5 @@ type SelectOption<TMeta = unknown> = {
 
 export type AccountMeta = {
   total: number;
+  type: string;
 };
