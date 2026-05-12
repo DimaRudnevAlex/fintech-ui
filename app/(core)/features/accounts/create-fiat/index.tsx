@@ -27,6 +27,9 @@ const CreateFiat: React.FC = () => {
         type: 'error',
         description: 'Не удалось открыть новый счет',
       }),
+    onSettled: (data, error, variables, onMutateResult, context) => {
+      context.client.invalidateQueries({ queryKey: ['account-list'] });
+    },
   });
 
   const options = useMemo(() => {
