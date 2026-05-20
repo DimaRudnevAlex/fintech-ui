@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react';
 
+import { AccountItem } from '@/(shared)/api/services/account/get-account-list';
 import Select from '@/(shared)/components/select';
 
 export type SelectAccountsProps = Pick<
@@ -10,12 +11,5 @@ export type SelectAccountsProps = Pick<
 type Option = {
   label: string;
   value: string;
-  meta: {
-    accountName: string;
-    accountNumber: string;
-    currency: string;
-    balance: string;
-    income: string;
-    expense: string;
-  };
+  meta: AccountItem;
 };

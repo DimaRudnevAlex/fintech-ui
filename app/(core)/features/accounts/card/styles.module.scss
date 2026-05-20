@@ -1,3 +1,34 @@
+// ─── Skeleton shimmer ────────────────────────────────────────────────────────
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.skeleton {
+  display: block;
+  border-radius: 6px;
+  background: linear-gradient(
+                  90deg,
+                  #1f1f1f 25%,
+                  #2a2a2a 50%,
+                  #1f1f1f 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+// Sizes calibrated to match real elements exactly
+.skeletonTitle      { width: 120px; height: 16px; }
+.skeletonBadge      { width: 80px;  height: 17px; border-radius: 6px; } // font 11px + 2px pad*2 + 1px border*2
+.skeletonDot        { width: 8px;   height: 8px;  border-radius: 50%; }
+.skeletonNumber     { width: 160px; height: 16px; }
+.skeletonBalance    { width: 160px; height: 32px; border-radius: 8px; }
+.skeletonStatLabel  { width: 56px;  height: 16px; }
+.skeletonStatValue  { width: 96px;  height: 20px; }
+
+// ─── Card ────────────────────────────────────────────────────────────────────
+
 .card {
   display: flex;
   flex-direction: column;
@@ -9,15 +40,55 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+// ─── Header ──────────────────────────────────────────────────────────────────
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .title {
   font-size: 16px;
   color: #aaa;
+}
+
+.defaultBadge {
+  font-size: 11px;
+  color: #facc15;
+  background: rgba(250, 204, 21, 0.1);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  border-radius: 6px;
+  padding: 2px 6px;
+  width: fit-content;
+}
+
+.statusGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+
+  &.active {
+    background: #4ade80;
+    box-shadow: 0 0 6px #4ade80;
+  }
+
+  &.inactive {
+    background: #f87171;
+  }
 }
 
 .accountNumber {
@@ -33,10 +104,20 @@
   }
 }
 
+// ─── Balance ─────────────────────────────────────────────────────────────────
+
 .balance {
   font-size: 28px;
   font-weight: 600;
 }
+
+.currency {
+  font-size: 18px;
+  font-weight: 400;
+  color: #aaa;
+}
+
+// ─── Stats ───────────────────────────────────────────────────────────────────
 
 .stats {
   display: flex;

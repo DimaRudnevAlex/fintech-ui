@@ -11,6 +11,14 @@ const SelectAccounts: React.FC<SelectAccountsProps> = ({
   value,
   className,
 }) => {
+  const formatBalance = (raw: string) => {
+    const trimmed = raw.replace(/^-?0+/, '') || '0';
+    const padded = trimmed.padStart(9, '0');
+    const int = padded.slice(0, -8) || '0';
+    const dec = padded.slice(-8, -6);
+    return `${int}.${dec}`;
+  };
+
   return (
     <Select
       className={className}
@@ -20,13 +28,13 @@ const SelectAccounts: React.FC<SelectAccountsProps> = ({
       renderOption={(account) => (
         <div className={styles.option}>
           <span>{account.meta.currency}</span>
-          <span>{account.meta.accountName}</span>
-          <strong>{account.meta.balance}</strong>
+          <span>{account.meta.account_number}</span>
+          <strong>{formatBalance(account.meta.balance)}</strong>
         </div>
       )}
       renderValue={(account) => (
         <div className={styles.selected}>
-          {account.meta.currency} • {account.meta.balance}
+          {account.meta.currency} • {formatBalance(account.meta.balance)}
         </div>
       )}
       placeholder={placeholder}

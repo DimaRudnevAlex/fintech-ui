@@ -11,7 +11,7 @@ import { useNotification } from '@/(shared)/lib/providers/notification-provider'
 import { defaultValues } from '@/(core)/features/accounts/create-fiat/model/constansts';
 import { schema } from '@/(core)/features/accounts/create-fiat/model/schema';
 
-const CreateFiat: React.FC = () => {
+const CreateFiat: React.FC<{ className?: string }> = ({ className }) => {
   const { data, isLoading } = useGetFiatCurrencies();
   const notify = useNotification();
   const { mutate, isPending } = useCreateFiatAccount({
@@ -50,7 +50,7 @@ const CreateFiat: React.FC = () => {
   });
 
   return (
-    <div>
+    <div className={className}>
       <form onSubmit={(e) => e.preventDefault()}>
         <form.AppField
           name="currency"
@@ -73,7 +73,7 @@ const CreateFiat: React.FC = () => {
             form.handleSubmit();
           }}
         >
-          {'Открыть счет'}
+          {'Добавить валюту'}
         </BaseButton>
       </form>
     </div>

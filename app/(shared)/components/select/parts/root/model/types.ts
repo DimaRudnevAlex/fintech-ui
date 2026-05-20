@@ -1,7 +1,7 @@
 import { SelectOption } from '@/(shared)/components/select/model/types';
 
 export type SelectRootProps<TOption extends SelectOption> = {
-  value?: TOption;
+  value?: TOption | null;
   options: TOption[];
   onChange?: (option: TOption) => void;
   children: React.ReactNode;

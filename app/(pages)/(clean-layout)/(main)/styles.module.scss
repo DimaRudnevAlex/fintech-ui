@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background-color: var(--white);
+  background-color: #222222;
 }
 
 .actions {
@@ -8,4 +8,37 @@
   display: flex;
   justify-content: end;
   gap: 20px;
+}
+
+.login,
+.register {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease;
+}
+
+.login {
+  border: 1px solid #dcdcdc;
+  color: #222;
+  background: #fff;
+
+}
+
+.register {
+  background: #111;
+  color: #fff;
 }

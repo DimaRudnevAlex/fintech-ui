@@ -5,7 +5,7 @@ export type SelectOption<TMeta = unknown> = {
 };
 
 export type SelectProps<TOption extends SelectOption = SelectOption> = {
-  value: TOption;
+  value: TOption | null;
   placeholder?: string;
   onChange: (option: TOption) => void;
   onBlur?: () => void;

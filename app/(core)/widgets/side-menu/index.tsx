@@ -57,10 +57,6 @@ const SideMenu: React.FC = () => {
             label={t(HEADER_TITLES[ROUTES.ACCOUNTS])}
             href={ROUTES.ACCOUNTS}
           />
-          <SublistItem
-            label={t(HEADER_TITLES[ROUTES.CREATE_TRANSFER_FIAT])}
-            href={ROUTES.CREATE_TRANSFER_FIAT}
-          />
         </AsideNestedItem>
         <AsideSingleItem
           label={t(HEADER_TITLES[ROUTES.CHAT])}
